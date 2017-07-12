@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - 测试模式匹配
+// MARK: - 模式匹配
 /// 场景描述：
 /// - 如果是管理员登录，就输入账号和密码,成功则返回 true
 ///                                错误则返回 false
