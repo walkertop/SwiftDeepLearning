@@ -7,6 +7,10 @@
 //
 
 import Foundation
+enum Math {
+    static let e  = 2.718281828459045235360287
+    static let pi = 3.141592653589793238462643
+}
 
 // MARK: - 模式匹配
 /// 场景描述：
