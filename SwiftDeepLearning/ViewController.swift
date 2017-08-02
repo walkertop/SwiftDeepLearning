@@ -23,14 +23,13 @@ class ViewController: UIViewController {
 //            self.present(secondVc, animated: true) {
 //            }
 //        }
-        
+        testMethodDispatch()
         view.addSubview(configCusomView())
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-
     }
 }
 
@@ -52,5 +51,23 @@ class secondViewController: UIViewController {
         let sel2 = #selector(viewDidLoad)
         print("22222函数指针是\(imp2!),\(sel2)")
     }
+}
+
+
+// MARK: - Method Dispatch函数派发
+func testMethodDispatch() {
+//    let obj = ClassB()
+//    obj.classAFunc()
+//    obj.extensionClassAFunc()
+//    obj.protocolFunc()
+//    obj.finalFunc()
+//    
+//    let structA = StructA()
+//    structA.structAFunc()
+//    structA.extensionStructAFunc()
+//    
+//    let oc = OCClass()
+//    oc.OCFunc()
+//    oc.test()
 }
 
