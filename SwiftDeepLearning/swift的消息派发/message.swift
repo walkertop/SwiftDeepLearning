@@ -19,6 +19,7 @@ extension ClassA {
 }
 
 class ClassB: ClassA {
+    
 }
 
 let obj = ClassA()
