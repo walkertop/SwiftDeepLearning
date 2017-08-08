@@ -827,5 +827,27 @@ class Bicycle: aVehicle {
 
 let aBike = Bicycle(color: "blue")
 
+// MARK: - 析构函数(只有Class类型有析构器，而且析构函数不能主动调用）
+class TestDeinitClass {
+    var name = "zhang"
+    init!() {
+    }
+    deinit {
+         print("执行析构函数，类销毁，此时的name是\(name)")
+    }
+}
+
+var aTestDeinitClass = TestDeinitClass()
+aTestDeinitClass = nil
+
+
+
+
+
+
+
+
+
+
 
 
