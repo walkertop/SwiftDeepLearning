@@ -602,252 +602,410 @@ var str = "Hello, playground"
 
 
 
-class TestSetGetClass {
-    var number = 0 {
-        willSet {
-            print("父类的新值\(newValue)")
-        }
-        didSet {
-            print("父类的旧值\(oldValue)")
-        }
-    }
-}
-
-//TestSetGetClass().number = 3
-
-class ChildSetGetClass: TestSetGetClass {
-    override var number: Int {
-        willSet {
-            print("子类的新值\(newValue)")
-        }
-        didSet {
-            print("子类的旧值\(oldValue)")
-        }
-    }
-}
-
-//TestSetGetClass().number = 0
-
-ChildSetGetClass().number = 1
-//  1. 改变子类的值，其调用顺序是   子类的willSet方法-——> 父类的willSet方法-->父类的didSet方法--->子类的didSet方法
-//  2. 只要写了属性观察期，即使值没有改变，也会调用didSet和willSet方法
-
-
-
-struct TestSetGetStruct {
-    var name: String {
-        willSet {
-            print("结构体的新值\(newValue)")
-        }
-        didSet {
-            print("子类的旧值\(oldValue)")
-        }
-    }
-    mutating func changeName(newName: String) {
-        name = newName
-    }
-}
-
-var aStruct = TestSetGetStruct(name: "Tom")
-var newName = "Jimmy"
-aStruct.changeName(newName: newName)
-
-
-var dictionary = ["one": 1, "two": 2,"three": 3]
-print(dictionary["one"] ?? "对应的key没有value")
-dictionary["three"] = nil
-print(dictionary)
-
-// 字典的定义和取值都是[],OC是定义是{}，取值是（）
-// 通过key取值value，返回值为option类型
-// 可以通过将某个key的value值设为nil来完成删除操作
-
-class Vehicle {
-    var speed = 0
-    var setGetProperty: String = "setGetProperty"
-    var hasWheel: Bool {
-        return true
-    }
-    
-    func drive() {
-        print("Vehicle drive")
-    }
-}
-
-class Train: Vehicle {
-    
-// 如果父类为读写属性，而子类重写为只读属性，会报错，错误如下：
-// Cannot override mutable property with read-only property 'setGetProperty'
-//    var setGetProperty: String {
-//        get {
-//            return "只读属性"
+//class TestSetGetClass {
+//    var number = 0 {
+//        willSet {
+//            print("父类的新值\(newValue)")
+//        }
+//        didSet {
+//            print("父类的旧值\(oldValue)")
 //        }
 //    }
-    
-    override func drive() {
-        super.drive()
-        print("train drive")
-    }
-}
-class Ship: Vehicle {
-    override var hasWheel: Bool {
-        set {
-            print("调用set方法,newValue的值为\(newValue)")
-//            self.hasWheel = newValue
-        }
-        get {
-            print("调用get方法")
-            return false
-        }
-    }
-}
-let aTrain = Train()
-aTrain.drive()
+//}
+//
+////TestSetGetClass().number = 3
+//
+//class ChildSetGetClass: TestSetGetClass {
+//    override var number: Int {
+//        willSet {
+//            print("子类的新值\(newValue)")
+//        }
+//        didSet {
+//            print("子类的旧值\(oldValue)")
+//        }
+//    }
+//}
+//
+////TestSetGetClass().number = 0
+//
+//ChildSetGetClass().number = 1
+////  1. 改变子类的值，其调用顺序是   子类的willSet方法-——> 父类的willSet方法-->父类的didSet方法--->子类的didSet方法
+////  2. 只要写了属性观察期，即使值没有改变，也会调用didSet和willSet方法
+//
+//
+//
+//struct TestSetGetStruct {
+//    var name: String {
+//        willSet {
+//            print("结构体的新值\(newValue)")
+//        }
+//        didSet {
+//            print("子类的旧值\(oldValue)")
+//        }
+//    }
+//    mutating func changeName(newName: String) {
+//        name = newName
+//    }
+//}
+//
+//var aStruct = TestSetGetStruct(name: "Tom")
+//var newName = "Jimmy"
+//aStruct.changeName(newName: newName)
+//
+//
+//var dictionary = ["one": 1, "two": 2,"three": 3]
+//print(dictionary["one"] ?? "对应的key没有value")
+//dictionary["three"] = nil
+//print(dictionary)
+//
+//// 字典的定义和取值都是[],OC是定义是{}，取值是（）
+//// 通过key取值value，返回值为option类型
+//// 可以通过将某个key的value值设为nil来完成删除操作
+//
+//class Vehicle {
+//    var speed = 0
+//    var setGetProperty: String = "setGetProperty"
+//    var hasWheel: Bool {
+//        return true
+//    }
+//
+//    func drive() {
+//        print("Vehicle drive")
+//    }
+//}
+//
+//class Train: Vehicle {
+//
+//// 如果父类为读写属性，而子类重写为只读属性，会报错，错误如下：
+//// Cannot override mutable property with read-only property 'setGetProperty'
+////    var setGetProperty: String {
+////        get {
+////            return "只读属性"
+////        }
+////    }
+//
+//    override func drive() {
+//        super.drive()
+//        print("train drive")
+//    }
+//}
+//class Ship: Vehicle {
+//    override var hasWheel: Bool {
+//        set {
+//            print("调用set方法,newValue的值为\(newValue)")
+////            self.hasWheel = newValue
+//        }
+//        get {
+//            print("调用get方法")
+//            return false
+//        }
+//    }
+//}
+//let aTrain = Train()
+//aTrain.drive()
+//
+//let aShip = Ship()
+//aShip.hasWheel = false
+//let a = aShip.hasWheel
+//
+//// 重写属性的Set方法和GET方法
+//// 父类是只读属性，子类可以将其重写为读写属性
+//// 父类是读写属性，子类必须也是读写属性，不能是只读属性
+//
+//
+//
+//// MARK: - 构造函数
+///*
+// * 存储性属性，要么初始化就给定值，要么在构造函数写，若是可选类型，可以不用给值，不给值默认会为nil
+// * 存储性属性，给默认值或者在构造函数中初始化时，不会调用属性观察器
+// * 对于常量let属性，其值在初始化之后确定为常量不可以修改，在初始化的时候，可以赋值
+// * 对于存储性属性，如果后续不修改，尽量在定义时，直接做赋值操作，不要写在初始化的构造函数中
+// *
+// * 对于值类型的struct和enume没有继承，所以初始化构造器相对简单
+// * 如果所有的属性都有默认值，可以不自定义构造器,swift会帮你创建一个默认构造器。
+// Class类型，默认构造器就是init() {}
+// 结构体类型为逐一成员构造器，比如struct Size {
+// var width = 0.0, height = 0.0
+// }
+// let twoByTwo = Size(width: 2.0, height: 2.0)
+//
+//
+//
+//
+//
+// ***
+// 对于值类型，如果你自定义了一个构造器，那么默认构造器就没了，比如struct的逐一成员构造器就无法访问
+// 但对于Class的引用类型，即使你自定义了，但默认的init(){}仍然存在
+// */
+//
+//class TestInitlizationClass {
+//    let name: String
+//    init() {
+//        self.name = "li"
+//    }
+//
+//    init(name: String) {
+//        self.name = name
+//    }
+//}
+//
+//struct TestColorStruct0 {
+//    var red, green, blue: Float
+//    var alpha: Float = 1.0
+//        init(red: Float,green: Float,blue:Float) {
+//            self.red = red
+//            self.green = green
+//            self.blue = blue
+//        }
+//
+//    init(red: Float,green: Float,blue:Float,alpha: Float) {
+//        self.red = red
+//        self.green = green
+//        self.blue = blue
+//        self.alpha = alpha
+//    }
+//}
+//
+//struct TestColorStruct1 {
+//    var red, green, blue: Float
+//    var alpha: Float = 1.0
+//
+//    init(red: Float,green: Float,blue:Float,alpha: Float = 1.0) {
+//        self.red = red
+//        self.green = green
+//        self.blue = blue
+//        self.alpha = alpha
+//    }
+//}
+//
+//struct TestColorStruct2 {
+//    var red, green, blue: Float
+//    var alpha: Float = 1.0
+//
+//    // init?的可失败构造器的返回值是一个可选类型
+//    // init!的可失败构造器的已经对隐形可选类型进行了解包，不是可选类型
+//
+//    init?(red: Float,green: Float,blue:Float,alpha: Float) {
+//        if alpha > 1.0 || alpha < 0.0 || red < 0.0 || red > 255.0 || green < 0.0 || green > 255.0 || blue < 0.0 || blue > 255.0{
+//            print("初始化失败")
+//            return nil
+//        }
+//        self.red = red
+//        self.green = green
+//        self.blue = blue
+//        self.alpha = alpha
+//    }
+//}
+//
+////对比TestColorStruct0和TestColorStruct1发现：指定alpha的默认值为1.0，会自动生成包含和不包含alpha的两种初始化方法，TestColorStruct1的写法更简洁一些
+////对比TestColorStruct1和TestColorStruct2发现：可以根据类型指定范围来构建初始化构造器
+//
+//TestColorStruct0(red: 10.0, green: 10.0, blue: 10.0)
+//TestColorStruct1(red: 10.0, green: 10.0, blue: 10.0)
+//TestColorStruct2(red: 333, green: 2, blue: 2, alpha: 0.1)
+//
+//
+//class aVehicle {
+//    var numberOfWheels = 0
+//    var description: String {
+//      return "\(numberOfWheels) wheel(s)"
+//    }
+//}
+//
+//class Bicycle: aVehicle {
+//    var color: String = "red"
+//    override init() {
+//        super.init()
+//        numberOfWheels = 2
+//    }
+//
+//    convenience init(color: String) {
+//        self.init()
+//        self.color = color
+//    }
+//}
+//
+//let aBike = Bicycle(color: "blue")
+//
+//// MARK: - 析构函数(只有Class类型有析构器，而且析构函数不能主动调用）
+//class TestDeinitClass {
+//    var name = "zhang"
+//    init!() {
+//    }
+//    deinit {
+//         print("执行析构函数，类销毁，此时的name是\(name)")
+//    }
+//}
+//
+//var aTestDeinitClass = TestDeinitClass()
+//aTestDeinitClass = nil
 
-let aShip = Ship()
-aShip.hasWheel = false
-let a = aShip.hasWheel
-
-// 重写属性的Set方法和GET方法
-// 父类是只读属性，子类可以将其重写为读写属性
-// 父类是读写属性，子类必须也是读写属性，不能是只读属性
 
 
+// MARK: - 可选类型的意思
 
-// MARK: - 构造函数
-/*
- * 存储性属性，要么初始化就给定值，要么在构造函数写，若是可选类型，可以不用给值，不给值默认会为nil
- * 存储性属性，给默认值或者在构造函数中初始化时，不会调用属性观察器
- * 对于常量let属性，其值在初始化之后确定为常量不可以修改，在初始化的时候，可以赋值
- * 对于存储性属性，如果后续不修改，尽量在定义时，直接做赋值操作，不要写在初始化的构造函数中
- *
- * 对于值类型的struct和enume没有继承，所以初始化构造器相对简单
- * 如果所有的属性都有默认值，可以不自定义构造器,swift会帮你创建一个默认构造器。
- Class类型，默认构造器就是init() {}
- 结构体类型为逐一成员构造器，比如struct Size {
- var width = 0.0, height = 0.0
- }
- let twoByTwo = Size(width: 2.0, height: 2.0)
- 
- 
- 
- 
- 
- ***
- 对于值类型，如果你自定义了一个构造器，那么默认构造器就没了，比如struct的逐一成员构造器就无法访问
- 但对于Class的引用类型，即使你自定义了，但默认的init(){}仍然存在
- */
+//let name1: String? = "name1"
+//let name2: String! = "name2"
+//var name3: String?
+//var name4: String!
+//let name5: String? = "name5"
+//let name6: String! = "name6"
+//
+//print(name1)
+//print(name2)
+//print(name3)
+//print(name4)
+//print(name5)
+//print(name6)
+//
+////可选类型的意思是：     有值则取值，但若不解包，值为optional;  无值则为nil
+////隐式可选类型的意思是：  有值则取值，已经解包，值不是optional;  无值则为nil
 
-class TestInitlizationClass {
-    let name: String
-    init() {
-        self.name = "li"
-    }
-    
-    init(name: String) {
-        self.name = name
-    }
-}
-
-struct TestColorStruct0 {
-    var red, green, blue: Float
-    var alpha: Float = 1.0
-        init(red: Float,green: Float,blue:Float) {
-            self.red = red
-            self.green = green
-            self.blue = blue
-        }
-    
-    init(red: Float,green: Float,blue:Float,alpha: Float) {
-        self.red = red
-        self.green = green
-        self.blue = blue
-        self.alpha = alpha
-    }
-}
-
-struct TestColorStruct1 {
-    var red, green, blue: Float
-    var alpha: Float = 1.0
-    
-    init(red: Float,green: Float,blue:Float,alpha: Float = 1.0) {
-        self.red = red
-        self.green = green
-        self.blue = blue
-        self.alpha = alpha
-    }
-}
-
-struct TestColorStruct2 {
-    var red, green, blue: Float
-    var alpha: Float = 1.0
-
-    // init?的可失败构造器的返回值是一个可选类型
-    // init!的可失败构造器的已经对隐形可选类型进行了解包，不是可选类型
-
-    init?(red: Float,green: Float,blue:Float,alpha: Float) {
-        if alpha > 1.0 || alpha < 0.0 || red < 0.0 || red > 255.0 || green < 0.0 || green > 255.0 || blue < 0.0 || blue > 255.0{
-            print("初始化失败")
-            return nil
-        }
-        self.red = red
-        self.green = green
-        self.blue = blue
-        self.alpha = alpha
-    }
-}
-
-//对比TestColorStruct0和TestColorStruct1发现：指定alpha的默认值为1.0，会自动生成包含和不包含alpha的两种初始化方法，TestColorStruct1的写法更简洁一些
-//对比TestColorStruct1和TestColorStruct2发现：可以根据类型指定范围来构建初始化构造器
-
-TestColorStruct0(red: 10.0, green: 10.0, blue: 10.0)
-TestColorStruct1(red: 10.0, green: 10.0, blue: 10.0)
-TestColorStruct2(red: 333, green: 2, blue: 2, alpha: 0.1)
-
-
-class aVehicle {
-    var numberOfWheels = 0
-    var description: String {
-      return "\(numberOfWheels) wheel(s)"
-    }
-}
-
-class Bicycle: aVehicle {
-    var color: String = "red"
-    override init() {
-        super.init()
-        numberOfWheels = 2
-    }
-
-    convenience init(color: String) {
-        self.init()
-        self.color = color
-    }
-}
-
-let aBike = Bicycle(color: "blue")
-
-// MARK: - 析构函数(只有Class类型有析构器，而且析构函数不能主动调用）
-class TestDeinitClass {
-    var name = "zhang"
-    init!() {
-    }
-    deinit {
-         print("执行析构函数，类销毁，此时的name是\(name)")
-    }
-}
-
-var aTestDeinitClass = TestDeinitClass()
-aTestDeinitClass = nil
-
-
-
-
-
-
-
-
-
-
+// MARK: - 解除闭包的循环引用
+////如果闭包没有指明参数列表或者返回类型，即它们会通过上下文推断，那么可以把捕获列表和关键字in放在闭包最开始的地方：
+////
+////lazy var someClosure: Void -> String = {
+////    [unowned self, weak delegate = self.delegate!] in
+////    // 这里是闭包的函数体
+////}
+//
+//
+//
+//
+//
+//// 可选式链式调用，A.B.C
+//// 如果B是可选类型，C不是，那么A.B.C的结果也是可选类型
+//class TestOptionalValueClass {
+//    var name: String = "zhang"
+//
+//    func printName() {
+//        print(name)
+//    }
+//}
+//
+//var aTestOptionalValueClass: TestOptionalValueClass? = TestOptionalValueClass()
+//print(aTestOptionalValueClass?.name)
+//
+//TestOptionalValueClass().printName()
+//
+//
+//// MARK: - 敢于错误类型的处理Error 在swift中是一个协议，可以根据协议自定义错误类型
+//
+///*
+// 执行错误处理的方式主要有四种
+// 用throw函数传递错误，抛出错误
+// 处理错误的方式：
+// 1. 直接在对应的错误类型后执行特定的函数来傻瓜处理
+//         func someThrowingFunction() throws -> Int {
+//             try executeSomeFuntion()
+//         }
+// 2. do-catch处理抛出的错误
+//         do {
+//         try expression
+//         statements
+//         } catch pattern 1 {
+//         statements
+//         } catch pattern 2 where condition {
+//         statements
+//         }
+//  3. 也可以通过try将错误转化为可选值来处理错误
+//  形式类似如下
+//         func someThrowingFunction() throws -> Int {
+//             // ...
+//         }
+//
+//         let x = try? someThrowingFunction()
+//
+//         let y: Int?
+//         do {
+//             y = try someThrowingFunction()
+//         } catch {
+//             y = nil
+//         }
+// *
+// *  定义一个场景：
+// *
+// *  一女生找男朋友，要求条件是：
+//                         身高超过180，
+//                         体重低于80kg,
+//                         年收入不低于30万；
+// *  如果不满足以上条件，则返回错误，并告知具体的错误类型
+// *
+// *
+// */
+//
+//
+//enum CantMeetStandard: Error {
+//    case heightError
+//    case weightError
+//    case incomeError
+//}
+//
+//class BoyFriendClass {
+//    var weight: Float = 0.0
+//    var height: Float = 0.0
+//    var income: Float = 0.0
+//
+//    init(height: Float, weight: Float, income: Float) {
+//        self.height = height
+//        self.weight = weight
+//        self.income = income
+//    }
+//}
+//
+//func isMeetStandard(boy: BoyFriendClass)throws -> Bool {
+//    guard boy.height >= 180 else {
+//        throw CantMeetStandard.heightError
+//    }
+//    guard boy.weight <= 80 else {
+//        throw CantMeetStandard.weightError
+//    }
+//    guard boy.income >= 30 else {
+//        throw CantMeetStandard.incomeError
+//    }
+//    print("满足要求")
+//    return true
+//}
+//
+//// do-catch执行错误就会直接抛出，不会继续执行，不能一次检出多种错误
+//// 比如次数，体重和收入都不满足要求，但检测到体重不符合要去后就直接跑出了，不会再执行第三步了
+//var boy1 = BoyFriendClass(height: 180, weight: 100, income: 20)
+//do {
+//    try isMeetStandard(boy: boy1)
+//} catch CantMeetStandard.heightError {
+//    print("身高不符合要求")
+//} catch CantMeetStandard.weightError {
+//    print("体重不符合要求")
+//} catch CantMeetStandard.incomeError {
+//    print("收入不符合要求")
+//}
+//
+//
+//// 将错误变为可选值
+//// 函数前面加try返回值类型为可选值.   正确则正常执行；
+////                               错误则返回nil
+////所以可以根据是否为nil来决定下一步是否执行
+//var boy = BoyFriendClass(height: 181, weight: 70, income: 37)
+//let isMeet1 = try? isMeetStandard(boy: boy)
+//let isMeet2 = try! isMeetStandard(boy: boy)
+//print(isMeet1)  //可选类型，错误则为nil
+//print(isMeet2)  //已经解包，不满足则会报错
+//
+//
+//// MARK: - defer
+////defer语句将代码的执行延迟到当前的作用域退出之前。该语句由defer关键字和要被延迟执行的语句组成。延迟执行的语句不能包含任何控制转移语句，例如break或是return语句，或是抛出一个错误。延迟执行的操作会按照它们被指定时的顺序的相反顺序执行——也就是说，第一条defer语句中的代码会在第二条defer语句中的代码被执行之后才执行，以此类推
+//
+//func openTheDoor() {
+//    defer {
+//        print("关门")
+//    }
+//    print("开门")
+//    print("取出东西")
+//}
+////打印结果是：
+////开门
+////取出东西
+////关门
+//openTheDoor()
 
 
