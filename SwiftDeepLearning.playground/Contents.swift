@@ -1018,17 +1018,17 @@ var str = "Hello, playground"
 ////用类型转换操作符（as? 或 as!）某类型的一个常量或变量可能在幕后实际上属于一个子类或者遵守协议，    返回值类型：  正确则返回该类型，错误则返回nil
 //
 //protocol BProtocol {
-//    
+//
 //}
 //
 //class BClass: BProtocol {
-//    
+//
 //}
 //class BBClass: BClass {
-//    
+//
 //}
 //class BBBClass: BBClass {
-//    
+//
 //}
 //let bClass = BClass()
 //let bbClass = BBClass()
@@ -1058,5 +1058,132 @@ var str = "Hello, playground"
 //array2.append(bClass)   //只能添加class类型
 //
 
+//
+//
+//
+// MARK: - extension
+//
+///*
+// *
+// *  问： 可以给类扩展属性么?
+// *  答： extension可以扩展属性，但只能扩展计算型属性computed properties，不能在扩展里定义存储性属性stored properties
+// *  问： 给类扩展的属性，方法，协议可以被继承么？
+// *  答:  扩展只能扩展计算型属性，可以被继承，扩展的方法和协议也都可以被继承
+// *
+// *  进阶：
+// *  可以在扩展里添加属性的set/get方法，也可以添加计算型属性
+// *  但是不可以添加属性观察期，也不可以添加存储性属性
+// *
+// *
+// *
+// *
+// *
+// */
+//
+
+//protocol TestExtensionProtocol {
+//    func protocolFunction()
+//}
+//
+//class TestExtensionClass {
+//    var name: String?
+//    func testFunction() {
+//    }
+//}
+//
+//extension TestExtensionClass: TestExtensionProtocol {
+//    var extensionName: String? {
+//        return "这是扩展的计算型属性"
+//    }
+//
+//    // 不可以添加属性观察器，但是可以添加属性的set和get方法
+//    var observeName: String {
+//        set {
+//            name = newValue
+//        }
+//        get {
+//            return "getName"
+//        }
+//    }
+//    func testExtensionFunction() {
+//    }
+//
+//    func protocolFunction() {
+//        print("这是一个protocolFunction")
+//    }
+//}
+//
+//class TestExtensionChildClass: TestExtensionClass {
+//}
+//
+//var aTestExtensionChildClass = TestExtensionChildClass()
+//
+//aTestExtensionChildClass.extensionName
+//aTestExtensionChildClass.testExtensionFunction()
+//aTestExtensionChildClass.protocolFunction()
+//aTestExtensionChildClass.observeName = "1"
+//print(aTestExtensionChildClass.name)
+//
+//
+//
+//
+//struct TestExtensionStruct {
+//    var structName: String?
+//    func testStructFunction() {
+//        print("这是结构体的方法")
+//    }
+//
+//}
+//extension TestExtensionStruct {
+//    var extensionStructName: String {
+//        return "这是一个结构体的扩展属性名字"
+//    }
+//    func testStructExtensionFunction() {
+//        print("这是结构体扩展的方法")
+//    }
+//}
+//
+//var aTestExtensionStruct = TestExtensionStruct(structName: "结构体")
+//aTestExtensionStruct.testStructFunction()
+//aTestExtensionStruct.testStructExtensionFunction()
+//aTestExtensionStruct.structName
+//
+//
+//
+////通过extension的方法也可以改变struct和enum值类型的属性(用处很大，毕竟swift底层是struct)
+//extension Int {
+//    mutating func square() -> Int{
+//         return self * self
+//    }
+////    更简单的方法
+////    mutating func square() {
+////        self = self * self
+////    }
+//}
+//
+//var num = 3
+//num.square()
+////不可以直接用3.square()因为要求参数必须是可变类型
+
+
+
+
+//// 下面是一个值类型的例子
+//struct S { var data: Int = -1 }
+//var a = S()
+//var b = a                            // b是a的拷贝
+//a.data = 42                            // 更改a的数据，b的不受影响
+//print("\(a.data), \(b.data)")        // 输出结果 "42, -1”
+//
+//
+//class TestValueTypeClass {
+//    var name: String = "name"
+//
+//}
+//
+//var aTestValueTypeClass = TestValueTypeClass()
+//var bTestValueTypeClass = aTestValueTypeClass
+////aTestValueTypeClass.name = "newName"
+//print(bTestValueTypeClass.name)
 
 
