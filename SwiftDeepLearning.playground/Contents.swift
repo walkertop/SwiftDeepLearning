@@ -1009,3 +1009,54 @@ var str = "Hello, playground"
 //openTheDoor()
 
 
+
+
+
+
+//// MARK: - is和as的类型检查
+////is :  用类型检查操作符（is）来检查一个实例是否属于特定子类型,可以用来检查继承和遵守协议         返回值类型：   正确为true错误为false
+////用类型转换操作符（as? 或 as!）某类型的一个常量或变量可能在幕后实际上属于一个子类或者遵守协议，    返回值类型：  正确则返回该类型，错误则返回nil
+//
+//protocol BProtocol {
+//    
+//}
+//
+//class BClass: BProtocol {
+//    
+//}
+//class BBClass: BClass {
+//    
+//}
+//class BBBClass: BBClass {
+//    
+//}
+//let bClass = BClass()
+//let bbClass = BBClass()
+//let bbbClass = BBBClass()
+//bbbClass is BClass        //检查继承关系
+//bbbClass is BProtocol     //检查遵守协议
+//
+//bbClass as? BBBClass      //如果
+//
+//bbClass as? BProtocol     //也可以用于判断遵守协议与否
+//
+//
+//
+//// MARK: - Any 和 AnyObject
+////Any 可以表示任何类型，包括函数类型。
+////AnyObject 可以表示任何类类型的实例。
+//
+//// var array: [Any]? 表明数组的元素可以是各种类型
+//var array = [Any]()
+//array.append(1)
+//array.append(1.4)
+//array.append("字符串")
+//array.append(BClass())
+//print(array)
+//
+//var array2 = [AnyObject]()
+//array2.append(bClass)   //只能添加class类型
+//
+
+
+
