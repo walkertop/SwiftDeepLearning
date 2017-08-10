@@ -1187,3 +1187,99 @@ var str = "Hello, playground"
 //print(bTestValueTypeClass.name)
 
 
+
+
+//MARK: @protocol
+
+
+// 协议里定义属性
+// 协议里定义属性，需要定义set/get方法；
+//  如果声明为set/get方法的属性，则遵守协议的类型必须一定实现set/get方法
+//  如果声明为get方法的属性，    则遵守协议的类型可以只实现get方法，也可以实现set/get方法
+
+
+// 声明的属性默认是一定要实现的
+
+
+
+// 暂时验证： 无法增加Class类的属性
+// 协议增加mutating方法也暂时无效
+
+
+protocol TestProtocol {
+    // 协议中定义属性
+    var name: String {set get}
+    static var staticName: String { get }
+//    class var className: String {get}
+    
+    
+    // 协议中定义方法
+    func testProtocolFunction()
+//    mutating testProtocolValueFunction()
+}
+
+class TestProtocolClass: TestProtocol {
+    
+    var name: String {
+        set {
+            
+        }
+        get {
+            return "getName"
+        }
+    }
+    
+    static var staticName: String {
+        return "staticName"
+    }
+    
+//   class var className: String {
+//        set {
+//        }
+//        get {
+//            return "classNzame"
+//        }
+//    }
+    
+//      执行方法
+    func testProtocolFunction() {
+        print("执行testProtocolFunction")
+    }
+    
+    
+    var customProtocol : TestProtocol?
+}
+
+struct TestProtocolStruct: TestProtocol {
+    
+    var structName: String = "structName"
+//    class var className: String {
+//        return "className"
+//    }
+    
+    var name: String {
+        set {
+        }
+        get {
+            return "getName"
+        }
+    }
+    
+    static var staticName: String {
+        return "staticName"
+    }
+    
+    func testProtocolFunction() {
+        print("执行testProtocolFunction")
+    }
+    
+}
+
+//class TestDelegateClass {
+//
+//
+//    var a = TestProtocolClass()
+//    a.customProtocol = self
+//
+//}
+
