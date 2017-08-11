@@ -1206,74 +1206,81 @@ var str = "Hello, playground"
 // 协议增加mutating方法也暂时无效
 
 
-protocol TestProtocol {
-    // 协议中定义属性
-    var name: String {set get}
-    static var staticName: String { get }
-//    class var className: String {get}
-    
-    
-    // 协议中定义方法
-    func testProtocolFunction()
-//    mutating testProtocolValueFunction()
-}
-
-class TestProtocolClass: TestProtocol {
-    
-    var name: String {
-        set {
-            
-        }
-        get {
-            return "getName"
-        }
-    }
-    
-    static var staticName: String {
-        return "staticName"
-    }
-    
-//   class var className: String {
+//protocol TestProtocol {
+//    // 协议中定义属性
+//    var name: String {set get}
+//    static var staticName: String { get }
+////    class var className: String {get}
+//
+//
+//    // 协议中定义方法
+//    func testProtocolFunction()
+//    mutating func testProtocolValueFunction()
+//}
+//
+//class TestProtocolClass: TestProtocol {
+//
+//    var name: String {
+//        set {
+//
+//        }
+//        get {
+//            return "getName"
+//        }
+//    }
+//
+//    static var staticName: String {
+//        return "staticName"
+//    }
+//
+////   class var className: String {
+////        set {
+////        }
+////        get {
+////            return "classNzame"
+////        }
+////    }
+//
+////      执行方法
+//    func testProtocolFunction() {
+//        print("执行testProtocolFunction")
+//    }
+//
+//    func testProtocolValueFunction() {
+//        print("类里也可以调用mutating方法，因为本身类是引用类型，值是可变的")
+//    }
+//
+//
+//}
+//
+//struct TestProtocolStruct: TestProtocol {
+//
+//    var structName: String = "structName"
+////    class var className: String {
+////        return "className"
+////    }
+//
+//    var name: String {
 //        set {
 //        }
 //        get {
-//            return "classNzame"
+//            return "getName"
 //        }
 //    }
-    
-//      执行方法
-    func testProtocolFunction() {
-        print("执行testProtocolFunction")
-    }
-    
-    
-    var customProtocol : TestProtocol?
-}
-
-struct TestProtocolStruct: TestProtocol {
-    
-    var structName: String = "structName"
-//    class var className: String {
-//        return "className"
+//
+//    static var staticName: String {
+//        return "staticName"
 //    }
-    
-    var name: String {
-        set {
-        }
-        get {
-            return "getName"
-        }
-    }
-    
-    static var staticName: String {
-        return "staticName"
-    }
-    
-    func testProtocolFunction() {
-        print("执行testProtocolFunction")
-    }
-    
-}
+//
+//    func testProtocolFunction() {
+//        print("执行testProtocolFunction")
+//    }
+//
+//    mutating func testProtocolValueFunction() {
+//        name = "name的值在mutating方法中改变了"
+//    }
+//
+//}
 
 //class TestDelegateClass {
 //
@@ -1282,4 +1289,71 @@ struct TestProtocolStruct: TestProtocol {
 //    a.customProtocol = self
 //
 //}
+
+
+
+//// MARK: - 探究集合类型在swift和OC的区别
+//let a = NSMutableArray(array: [1,2,3])
+//let b:NSArray = a
+//a.insert(4, at: 3)
+////通过打印地址发现，a,b的内存地址相同，所以仍然是一个对象，因此不难理解a改变,b也会被影响
+//print(Unmanaged.passUnretained(a).toOpaque())
+//print(Unmanaged.passUnretained(b).toOpaque())
+//
+////如果不被影响，必须显式的复制
+//let c = NSMutableArray(array: [1,2,3])
+//let d = c.copy() as!NSArray
+//c.insert(4, at: 3)
+////c,d地址不同，c的改变不会影响d
+//print(c)
+//print(d)
+//
+//print(Unmanaged.passUnretained(c).toOpaque())
+//print(Unmanaged.passUnretained(d).toOpaque())
+//
+
+// MARK: - 探究==和===的区别
+
+
+// 引用类型的同一性（identity)
+// ==  来判断两个变量是否相等                      结构相等
+// === 来检查两个变量是否确实引用了同一个对象      “指针相等或者引用相等。”
+
+/*
+ first === third     是true
+ (first === second   是false
+ 
+ 
+ 
+ 
+ 结构体虽然是值类型，但是不能用== 也不能用 ===
+ 但是结构体里具体的成员变量可以用==
+ */
+
+//class TestSameClass {
+//    var name: String?
+//}
+//
+//var firstClass = TestSameClass()
+//var secondClass = TestSameClass()
+//var thirdClass = firstClass
+//
+//
+//var isIdentity = (firstClass === secondClass)
+//
+//
+//struct TestSameStruct {
+//    var name: String?
+//}
+//
+//var firstStruct = TestSameStruct(name: "Jimmy")
+//var secondStruct = TestSameStruct(name: "Jimmy")
+//
+////var isSame = (firstStruct === secondStruct)
+//
+//let x = [1,2,3]
+//var y = x
+//y.append(4)
+
+
 
