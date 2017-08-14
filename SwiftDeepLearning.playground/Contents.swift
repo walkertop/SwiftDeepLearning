@@ -1356,4 +1356,89 @@ var str = "Hello, playground"
 //y.append(4)
 
 
+//
+//var intArray = [1,2,3,4]
+//var stringArray = ["aa","b","c","da"]
+//
+//intArray.map { (a) -> Int in
+//    a + a
+//}
+//
+////intArray.filter { (a) -> Bool in
+////
+////    true
+////}
+//
+//
+
+// MARK: - swift里数组的成员和OC数组成员相同
+//var aNSArray: NSMutableArray = [1,2,3,4]
+//aNSArray.firstObject
+//
+//let aPoint = CGPoint(x: 100.0, y: 100.0)
+////var anyArray = [aPoint]
+//var aNewArray = [aPoint]
+//
+// 两者都是true
+//aNSArray[1] is NSNumber
+//aNewArray[0] is NSValue
+
+
+
+
+// MARK: - 扩展在遵守对象里的实现 VS 协议在扩展中的实现
+// 对比静态调用和动态调用
+protocol Shareable {
+    var socialMediaDescription: String { get }
+    func share()
+
+}
+//我们可以在协议扩展中加入 share 方法。它把将要分享到社交网络的的内容打印到标准输出中。我们可以再加入一个方法来对这个输出添加一些格式。
+
+extension Shareable {
+    func share() {
+        print("Sharing: \(self.socialMediaDescription)")
+    }
+    func linesAndShare() {
+        print("----------")
+        share()
+        print("----------")
+    }
+}
+
+extension String: Shareable {
+    var socialMediaDescription: String { return self }
+    
+    func share() {
+        print("Special String Sharing: \(self.socialMediaDescription)")
+    }
+}
+let hello: Shareable = "hello"
+hello.share()
+// 打印 "Sharing: hello"
+//更有趣的是，猜猜看如果我们直接在 String 上调用 linesAndShare 时会发生什么？
+"hello".linesAndShare()
+
+
+
+
+protocol TestExtensionProtocol {
+    var customInt: String { get }
+    func protocolFunction()
+}
+
+extension TestExtensionProtocol {
+    func protocolFunction() {
+        print("静态派发的方式，调用协议扩展里的方法")
+    }
+}
+
+//class Int: TestExtensionProtocol {
+//    var customInt: String { get }
+//    func protocolFunction() {
+//        print("动态调用的方法，调用协议自定义接口的方法")
+//    }
+//}
+//
+
 
