@@ -1386,7 +1386,7 @@ var str = "Hello, playground"
 
 
 
-// MARK: - 扩展在遵守对象里的实现 VS 协议在扩展中的实现
+// MARK: - 协议中的方法在遵守对象里的实现 VS 在协议扩展中实现方法
 // 对比静态调用和动态调用
 protocol Shareable {
     var socialMediaDescription: String { get }
@@ -1441,4 +1441,147 @@ extension TestExtensionProtocol {
 //}
 //
 
+
+protocol TestClassProtocol: class {
+    func classProtocolFunction()
+}
+
+
+protocol TestFatherProtocol {
+    func fatherFunction()
+}
+
+protocol TestFirstChildProtocol: TestFatherProtocol {
+    func firstChildFunction()
+}
+protocol TestSecondChildProtocol: TestFatherProtocol {
+    func secondChildFunction()
+}
+
+
+class TestProtocolClass: TestClassProtocol, TestFatherProtocol, TestSecondChildProtocol,TestFirstChildProtocol {
+    func classProtocolFunction() {
+        print("只有类能集成")
+    }
+    
+    func firstChildFunction() {
+        print("第一个子类协议的方法")
+    }
+    
+    func secondChildFunction() {
+        print("第二个子类协议的方法")
+    }
+    
+//    func fatherFunction() {
+//        print("父类")
+//    }
+}
+
+
+extension TestFatherProtocol {
+    func fatherFunction() {
+        print("TestFatherProtocol协议的方法")
+    }
+}
+
+extension TestFirstChildProtocol {
+    func fatherFunction() {
+        print("TestFirstChildProtocol协议的方法")
+    }
+}
+
+//extension TestSecondChildProtocol {
+//    func fatherFunction() {
+//        print("TestSecondChildProtocol协议的方法")
+//    }
+//}
+let aTestProtocolClass = TestProtocolClass()
+aTestProtocolClass.fatherFunction()
+
+
+
+// 此时会报错
+//struct TestProtocolClassStruct: TestClassProtocol {
+//    func classProtocolFunction() {
+//        print("结构体也能遵守类协议")
+//    }
+//}
+
+
+ protocol TestOCClassProtocol {
+    func testProtocolAviableInOC()
+}
+
+class TestProtocolInOCClass: NSObject, TestOCClassProtocol {
+    func testProtocolAviableInOC() {
+        print("testProtocolAviableInOC")
+    }
+}
+
+let aTestProtocolInOCClass = TestProtocolInOCClass()
+aTestProtocolInOCClass.testProtocolAviableInOC()
+
+
+
+
+
+/// 类的实现和协议的实现
+
+/*
+ 1. 协协议的扩展可以直接实现协议定义的方法，遵守协议的类型可以直接调用方法实现，不需要自己来实现了
+ 2. 如果协议扩展中实现了，类也遵守协议在类中实现，或者类自定义了方法，都会覆盖掉协议扩展中实现的方法
+ 3. 即使协议不声明方法，扩展协议也可以实现，而且可以被遵守协议的类调用
+ 
+ 
+ */
+//protocol IntExtensionProtocol {
+////    optional var age: Int {get}
+//    func isThin(height: Float, weight: Float) -> Bool
+//}
+//
+//
+//extension IntExtensionProtocol {
+//    func isThin(height: Float, weight: Float) -> Bool {
+//        let num = height - weight
+//        print("协议扩展中的方法")
+//        return num > 110 ? true : false
+//    }
+//}
+//
+//class TestPersonThinClass: IntExtensionProtocol{
+//    var height: Float?
+//    var weight: Float?
+//    init(height: Float, weight: Float) {
+//        self.height = height
+//        self.weight = weight
+//    }
+//
+//    func isThin(height: Float, weight: Float) -> Bool {
+//        let num = height - weight
+//        print("遵守协议的类，自定义的方法")
+//        return num > 110 ? true : false
+//    }
+//}
+//
+//var aTestPersonThinClass = TestPersonThinClass(height: 180, weight: 100)
+//aTestPersonThinClass.isThin(height: 190, weight: 100)
+//
+//
+//
+//struct TestPersonThinStruct: IntExtensionProtocol{
+//    var height: Float?
+//    var weight: Float?
+//    init(height: Float, weight: Float) {
+//        self.height = height
+//        self.weight = weight
+//    }
+//
+//    func isThin(height: Float, weight: Float) -> Bool {
+//        let num = height - weight
+//        print("遵守协议的结构体，自定义的方法")
+//        return num > 110 ? true : false
+//    }
+//}
+//var aTestPersonThinStruct = TestPersonThinStruct(height: 180, weight: 100)
+//aTestPersonThinStruct.isThin(height: 190, weight: 100)
 
