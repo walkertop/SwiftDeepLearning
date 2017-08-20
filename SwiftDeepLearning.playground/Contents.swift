@@ -1567,7 +1567,6 @@ aTestProtocolInOCClass.testProtocolAviableInOC()
 //aTestPersonThinClass.isThin(height: 190, weight: 100)
 //
 //
-//
 //struct TestPersonThinStruct: IntExtensionProtocol{
 //    var height: Float?
 //    var weight: Float?
