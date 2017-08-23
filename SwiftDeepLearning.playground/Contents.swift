@@ -1584,3 +1584,36 @@ aTestProtocolInOCClass.testProtocolAviableInOC()
 //var aTestPersonThinStruct = TestPersonThinStruct(height: 180, weight: 100)
 //aTestPersonThinStruct.isThin(height: 190, weight: 100)
 
+let nameDictionary: [Int: String] = [001: "Jimmy"]
+let ageDictionary: [Int: Int] = [001: 20]
+
+func getInformationFrom (ID: Int) -> (name: String, age: Int) {
+    let name = nameDictionary[ID] ?? "找不到对应的名字"
+    let age = ageDictionary[ID] ?? 0
+    
+    return (name, age)
+}
+
+let aPerson = getInformationFrom(ID: 001)
+
+print(aPerson)
+
+//某种意义上来说，任何函数的返回值都是Tuples类型
+//func returnVoidFuntion() {
+//
+//}
+// （）等价于（Void）
+//func returnVoidFuntion()->() {
+//
+//}
+//
+//func returnIntFunction()->Int {
+//    return 1
+//}
+//
+//func returnIntFunction()->(Int) {
+//    return (1)
+//}
+
+
+

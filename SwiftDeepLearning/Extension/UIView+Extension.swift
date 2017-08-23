@@ -1,5 +1,5 @@
 //
-//  UIView+Entension.swift
+//  UIView+Extension.swift
 //  SwiftDeepLearning
 //
 //  Created by walker彬 on 2017/7/27.
@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 
 extension UIView {
+    
+    func with(frame: CGRect) -> Self {
+        self.frame = frame
+        return self
+    }
+    
     func with(backgroundColor: UIColor) -> Self {
         self.backgroundColor = backgroundColor
         return self
