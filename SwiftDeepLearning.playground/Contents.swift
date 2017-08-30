@@ -597,7 +597,6 @@ var str = "Hello, playground"
 ////懒加载（延时存储属性）的初始化是在构造结束之后。
 ////
 //aClass.name = "2223"
-//
 
 
 
