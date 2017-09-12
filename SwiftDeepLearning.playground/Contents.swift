@@ -825,7 +825,6 @@ var str = "Hello, playground"
 //}
 //
 //let aBike = Bicycle(color: "blue")
-//
 //// MARK: - 析构函数(只有Class类型有析构器，而且析构函数不能主动调用）
 //class TestDeinitClass {
 //    var name = "zhang"
