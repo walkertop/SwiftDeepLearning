@@ -8,8 +8,10 @@
 
 import Foundation
 
+//MARK: ClassA
 class ClassA: NSObject {
 }
+
 
 extension ClassA {
     func message() {}
@@ -18,10 +20,13 @@ extension ClassA {
     @objc final func finalWithPerformSelectorSupport() {}
 }
 
+//MARK: ClassB
 class ClassB: ClassA {
     
 }
 
+
+//MARK: 调用
 let obj = ClassA()
 
 func testMessage() { obj.message() }
