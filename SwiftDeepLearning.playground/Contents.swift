@@ -1621,7 +1621,7 @@ var dic: [Int : [String]] = [Int : [String]]()
 dic[2] = ["Two","222"]
 dic[1] = ["One","111"]
 print(dic)
-print(dic[1])
+
 let a = dic[1]?.count
 dic[1]?.append("一")
 dic[1]?.count
