@@ -23,6 +23,10 @@
 		5DF622CB1F15C35000D74036 /* ProtocolLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF622CA1F15C35000D74036 /* ProtocolLearning.swift */; };
 		5DF622CD1F15C61100D74036 /* PatternMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF622CC1F15C61100D74036 /* PatternMatch.swift */; };
 		5DF691EB1F27731200487691 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF691EA1F27731200487691 /* Generics.swift */; };
+		7056FF38238F6FC700CE70CA /* BaseTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056FF37238F6FC700CE70CA /* BaseTableTableViewController.swift */; };
+		7056FF3C238F704100CE70CA /* BaseTableViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056FF3B238F704100CE70CA /* BaseTableViewDataSourceProtocol.swift */; };
+		7056FF3F238FCEBA00CE70CA /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056FF3E238FCEBA00CE70CA /* CustomAlertViewController.swift */; };
+		7056FF41238FD07D00CE70CA /* CustomTransitionAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056FF40238FD07D00CE70CA /* CustomTransitionAnimated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		5DF622CA1F15C35000D74036 /* ProtocolLearning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolLearning.swift; sourceTree = "<group>"; };
 		5DF622CC1F15C61100D74036 /* PatternMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternMatch.swift; sourceTree = "<group>"; };
 		5DF691EA1F27731200487691 /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
+		7056FF37238F6FC700CE70CA /* BaseTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableTableViewController.swift; sourceTree = "<group>"; };
+		7056FF3B238F704100CE70CA /* BaseTableViewDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewDataSourceProtocol.swift; sourceTree = "<group>"; };
+		7056FF3E238FCEBA00CE70CA /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		7056FF40238FD07D00CE70CA /* CustomTransitionAnimated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionAnimated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +149,10 @@
 		5DF622991F15C2D800D74036 /* SwiftDeepLearning */ = {
 			isa = PBXGroup;
 			children = (
+				7056FF3D238FCDC000CE70CA /* 自定义弹窗 */,
 				5D83B6D81F29B8CF00AEBDFB /* Extension */,
 				5DF6229A1F15C2D800D74036 /* AppDelegate.swift */,
-				5DF6229C1F15C2D800D74036 /* ViewController.swift */,
+				7056FF3A238F701C00CE70CA /* ViewController */,
 				5DD1D5011F3082BF00C64038 /* swift的消息派发 */,
 				5DF622C81F15C2FB00D74036 /* CustomProtocol.swift */,
 				5DF622CA1F15C35000D74036 /* ProtocolLearning.swift */,
@@ -182,6 +191,33 @@
 				5DF691EA1F27731200487691 /* Generics.swift */,
 			);
 			name = "泛型（Generics）";
+			sourceTree = "<group>";
+		};
+		7056FF39238F701400CE70CA /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				7056FF37238F6FC700CE70CA /* BaseTableTableViewController.swift */,
+				7056FF3B238F704100CE70CA /* BaseTableViewDataSourceProtocol.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		7056FF3A238F701C00CE70CA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5DF6229C1F15C2D800D74036 /* ViewController.swift */,
+				7056FF39238F701400CE70CA /* TableView */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7056FF3D238FCDC000CE70CA /* 自定义弹窗 */ = {
+			isa = PBXGroup;
+			children = (
+				7056FF3E238FCEBA00CE70CA /* CustomAlertViewController.swift */,
+				7056FF40238FD07D00CE70CA /* CustomTransitionAnimated.swift */,
+			);
+			path = "自定义弹窗";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +313,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -324,6 +361,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7056FF3C238F704100CE70CA /* BaseTableViewDataSourceProtocol.swift in Sources */,
+				7056FF41238FD07D00CE70CA /* CustomTransitionAnimated.swift in Sources */,
 				5DF6229D1F15C2D800D74036 /* ViewController.swift in Sources */,
 				5DD1D5031F3082F500C64038 /* MethodDispatchClass.swift in Sources */,
 				5DF691EB1F27731200487691 /* Generics.swift in Sources */,
@@ -331,9 +370,11 @@
 				5DF622CD1F15C61100D74036 /* PatternMatch.swift in Sources */,
 				5D75FA051F2193D20026AE68 /* CompareProtocol.swift in Sources */,
 				5D631178212C1377003C7619 /* UIView+Extension.swift in Sources */,
+				7056FF38238F6FC700CE70CA /* BaseTableTableViewController.swift in Sources */,
 				5DF6229B1F15C2D800D74036 /* AppDelegate.swift in Sources */,
 				5D75FA031F20DFBB0026AE68 /* ComplexProtocol.swift in Sources */,
 				5D612EA31F31C5AE00FFA558 /* message.swift in Sources */,
+				7056FF3F238FCEBA00CE70CA /* CustomAlertViewController.swift in Sources */,
 				5DF622CB1F15C35000D74036 /* ProtocolLearning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
