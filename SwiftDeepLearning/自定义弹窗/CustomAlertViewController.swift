@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import SnapKit
 
 public class CustomAlertViewController: UIViewController {
   
@@ -35,7 +36,7 @@ public class CustomAlertViewController: UIViewController {
   
   public enum ContentType {
     /// 开课倒计时
-    case countdown(Int, (() -> Void)?)
+    case customView(Int, (() -> Void)?)
   }
   
   public var viewWillAppearCallback: (() -> Void)?
@@ -45,7 +46,7 @@ public class CustomAlertViewController: UIViewController {
   private let contentView: UIView
   private let tAnimation = CustomTransitionAnimated()
   private let transitionAnimation: ContentAnimation
-  private let layout: LayoutType
+  private var layout: LayoutType
   
   public init(contentView: UIView,
               backgroundAlpha: CGFloat = 0.7,
@@ -61,22 +62,18 @@ public class CustomAlertViewController: UIViewController {
   
   public init(type: ContentType) {
     switch type {
-//    case .countdown(let days, let callback):
-//      let countdownView = CountdownView(days: days, action: callback)
-//      self.contentView = countdownView
-//      tAnimation.backgroundAlpha = 0
-//      self.layout = .none
-      default: break
+    case .customView(let days, let callback):
+      let customView = CustomAlertView1(days: days, action: callback)
+      self.contentView = customView
+      tAnimation.backgroundAlpha = 0
+      self.layout = .none
     }
-    self.layout = .none
-    self.contentView = UIView(frame: CGRect(x: 20, y: 20, width: 100, height: 200))
+    self.layout = .fullScreen
     self.transitionAnimation = .none
     super.init(nibName: nil, bundle: nil)
-//    if let countdownView = self.contentView as? CountdownView {
-//      countdownView.delegate = self
-//    } else if let rsView = self.contentView as? RedemptionSuccessView {
-//      rsView.delegate = self
-//    }
+    if let customView = self.contentView as? CustomAlertView1 {
+      customView.delegate = self
+    }
 
     setupUI()
   }
@@ -93,9 +90,9 @@ public class CustomAlertViewController: UIViewController {
     self.view.addSubview(contentView)
     switch layout {
     case .fullScreen:
-//      contentView.snp.makeConstraints { make in
-//        make.top.left.bottom.right.equalToSuperview()
-//      }
+      contentView.snp.makeConstraints { make in
+        make.top.left.bottom.right.equalToSuperview()
+      }
       break
     case .none:
       break
@@ -115,7 +112,7 @@ public class CustomAlertViewController: UIViewController {
       animation.fromValue = 2 * position.y
       animation.toValue = position.y
       animation.duration = tAnimation.duration
-//      animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
       contentView.layer.add(animation, forKey: transitionAnimation.animationName)
     case .none:
       break
@@ -161,7 +158,7 @@ protocol CountdownViewDelegate: class {
 }
 
 // MARK: - CountdownViewDelegate
-extension CustomAlertViewController: CountdownViewDelegate {
+extension CustomAlertViewController: CustomAlertView1Delegate {
   func closeWindow() {
     self.dismiss(animated: true, completion: nil)
   }

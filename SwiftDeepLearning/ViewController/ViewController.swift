@@ -49,8 +49,13 @@ class ViewController: UIViewController {
   }()
   
   @IBAction func openTestTableViewController(_ sender: AnyObject) {
-    let tableViewVC = BaseTableTableViewController()
-    self.present(tableViewVC, animated: true, completion: nil)
+//    let tableViewVC = BaseTableTableViewController()
+//    self.present(tableViewVC, animated: true, completion: nil)
+    let alertViewController = CustomAlertViewController(type: .customView(3, {
+      print("debug-vira-log")
+    }))
+    
+    self.present(alertViewController, animated: true, completion: nil)
   }
 }
 
