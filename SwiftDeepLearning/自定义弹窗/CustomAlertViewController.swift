@@ -112,7 +112,7 @@ public class CustomAlertViewController: UIViewController {
       animation.fromValue = 2 * position.y
       animation.toValue = position.y
       animation.duration = tAnimation.duration
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
       contentView.layer.add(animation, forKey: transitionAnimation.animationName)
     case .none:
       break

@@ -24,6 +24,7 @@
 		5DF622CD1F15C61100D74036 /* PatternMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF622CC1F15C61100D74036 /* PatternMatch.swift */; };
 		5DF691EB1F27731200487691 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF691EA1F27731200487691 /* Generics.swift */; };
 		6A5926FA9C0A7D669A87C924 /* Pods_SwiftDeepLearningTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407D169D9972A21160BF4D9E /* Pods_SwiftDeepLearningTests.framework */; };
+		7027B7C02399FAD80032EC18 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027B7BF2399FAD80032EC18 /* UIImageExt.swift */; };
 		7056FF38238F6FC700CE70CA /* BaseTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056FF37238F6FC700CE70CA /* BaseTableTableViewController.swift */; };
 		7056FF3C238F704100CE70CA /* BaseTableViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056FF3B238F704100CE70CA /* BaseTableViewDataSourceProtocol.swift */; };
 		7056FF3F238FCEBA00CE70CA /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056FF3E238FCEBA00CE70CA /* CustomAlertViewController.swift */; };
@@ -78,6 +79,7 @@
 		5DF622CC1F15C61100D74036 /* PatternMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternMatch.swift; sourceTree = "<group>"; };
 		5DF691EA1F27731200487691 /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
 		68DE9ECF026D1A3DC51D2FB7 /* Pods-SwiftDeepLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDeepLearning.release.xcconfig"; path = "Target Support Files/Pods-SwiftDeepLearning/Pods-SwiftDeepLearning.release.xcconfig"; sourceTree = "<group>"; };
+		7027B7BF2399FAD80032EC18 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		7056FF37238F6FC700CE70CA /* BaseTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableTableViewController.swift; sourceTree = "<group>"; };
 		7056FF3B238F704100CE70CA /* BaseTableViewDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewDataSourceProtocol.swift; sourceTree = "<group>"; };
 		7056FF3E238FCEBA00CE70CA /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5D631177212C1377003C7619 /* UIView+Extension.swift */,
+				7027B7BF2399FAD80032EC18 /* UIImageExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				7056FF38238F6FC700CE70CA /* BaseTableTableViewController.swift in Sources */,
 				5DF6229B1F15C2D800D74036 /* AppDelegate.swift in Sources */,
 				5D75FA031F20DFBB0026AE68 /* ComplexProtocol.swift in Sources */,
+				7027B7C02399FAD80032EC18 /* UIImageExt.swift in Sources */,
 				5D612EA31F31C5AE00FFA558 /* message.swift in Sources */,
 				7056FF3F238FCEBA00CE70CA /* CustomAlertViewController.swift in Sources */,
 				5DF622CB1F15C35000D74036 /* ProtocolLearning.swift in Sources */,
@@ -639,6 +643,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -691,6 +696,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -708,7 +714,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -724,7 +730,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -740,7 +746,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearningTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftDeepLearning.app/SwiftDeepLearning";
 			};
 			name = Debug;
@@ -757,7 +763,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearningTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftDeepLearning.app/SwiftDeepLearning";
 			};
 			name = Release;
@@ -773,7 +779,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearningUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = SwiftDeepLearning;
 			};
 			name = Debug;
@@ -789,7 +795,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearningUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = SwiftDeepLearning;
 			};
 			name = Release;
@@ -804,7 +810,7 @@
 				5DF622BE1F15C2D900D74036 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5DF622BF1F15C2D900D74036 /* Build configuration list for PBXNativeTarget "SwiftDeepLearning" */ = {
 			isa = XCConfigurationList;
@@ -813,7 +819,7 @@
 				5DF622C11F15C2D900D74036 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5DF622C21F15C2D900D74036 /* Build configuration list for PBXNativeTarget "SwiftDeepLearningTests" */ = {
 			isa = XCConfigurationList;
@@ -822,7 +828,7 @@
 				5DF622C41F15C2D900D74036 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5DF622C51F15C2D900D74036 /* Build configuration list for PBXNativeTarget "SwiftDeepLearningUITests" */ = {
 			isa = XCConfigurationList;
@@ -831,7 +837,7 @@
 				5DF622C71F15C2D900D74036 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
