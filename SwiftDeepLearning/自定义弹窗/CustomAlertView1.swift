@@ -113,9 +113,6 @@ extension CustomAlertView1 {
       lbl.textColor = .clear
       lbl.textAlignment = .center
       lbl.font = UIFont.systemFont(ofSize: 180, weight: .black)
-//      lbl.gradientLayer.colors = [UIColor.vira_yellow.cgColor,
-//                                  UIColor(r: 255, g: 247, b: 83).cgColor]
-//      lbl.gradientLayer.mask = textLbl.layer
       return lbl
     }()
     customAlertBgView.addSubview(daysLbl)
