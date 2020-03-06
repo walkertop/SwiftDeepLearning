@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		43660AF7F7F8FE63BE505D53 /* Pods_SwiftTemplate_SwiftTemplateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE35915885CFEB65680DCDD /* Pods_SwiftTemplate_SwiftTemplateUITests.framework */; };
 		569304857566BEB812DE1E75 /* Pods_SwiftTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504B57415BD4AE02ACE16062 /* Pods_SwiftTemplate.framework */; };
+		5D0728D2241254E40032A778 /* TemplateWorkFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0728D1241254E40032A778 /* TemplateWorkFlow.swift */; };
 		5D370B362411F2FA00D953BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370B352411F2FA00D953BD /* AppDelegate.swift */; };
 		5D370B382411F2FA00D953BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370B372411F2FA00D953BD /* SceneDelegate.swift */; };
 		5D370B3D2411F2FA00D953BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D370B3B2411F2FA00D953BD /* Main.storyboard */; };
@@ -46,6 +47,10 @@
 		5D370BA92411F45B00D953BD /* PatternMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BA82411F45B00D953BD /* PatternMatch.swift */; };
 		5D370BAB2411F46000D953BD /* ProtocolLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BAA2411F46000D953BD /* ProtocolLearning.swift */; };
 		5D370BAF2411F61C00D953BD /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D370BAE2411F61C00D953BD /* contacts.json */; };
+		5D370BB62412450900D953BD /* OOPTemplateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BB52412450900D953BD /* OOPTemplateController.swift */; };
+		5D370BB82412452400D953BD /* OOPDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BB72412452400D953BD /* OOPDataSourceProtocol.swift */; };
+		5D370BBA2412453E00D953BD /* OOPTemplateDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BB92412453E00D953BD /* OOPTemplateDataSourceProvider.swift */; };
+		5D370BBC24124BD600D953BD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BBB24124BD600D953BD /* HomeController.swift */; };
 		751CA523C63357EFCA171DFD /* Pods_SwiftTemplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3D75189EEC9E979723A069 /* Pods_SwiftTemplateTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +77,7 @@
 		3D082FA9916085526D3FD95E /* Pods-SwiftTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTemplate.release.xcconfig"; path = "Target Support Files/Pods-SwiftTemplate/Pods-SwiftTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		44F38A8A28120485FDEE196E /* Pods-SwiftTemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTemplateTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftTemplateTests/Pods-SwiftTemplateTests.release.xcconfig"; sourceTree = "<group>"; };
 		504B57415BD4AE02ACE16062 /* Pods_SwiftTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0728D1241254E40032A778 /* TemplateWorkFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateWorkFlow.swift; sourceTree = "<group>"; };
 		5D370B322411F2FA00D953BD /* SwiftTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D370B352411F2FA00D953BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D370B372411F2FA00D953BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +121,10 @@
 		5D370BA82411F45B00D953BD /* PatternMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternMatch.swift; sourceTree = "<group>"; };
 		5D370BAA2411F46000D953BD /* ProtocolLearning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolLearning.swift; sourceTree = "<group>"; };
 		5D370BAE2411F61C00D953BD /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
+		5D370BB52412450900D953BD /* OOPTemplateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OOPTemplateController.swift; sourceTree = "<group>"; };
+		5D370BB72412452400D953BD /* OOPDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OOPDataSourceProtocol.swift; sourceTree = "<group>"; };
+		5D370BB92412453E00D953BD /* OOPTemplateDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OOPTemplateDataSourceProvider.swift; sourceTree = "<group>"; };
+		5D370BBB24124BD600D953BD /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		9391A09101D12630461E1686 /* Pods-SwiftTemplate-SwiftTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTemplate-SwiftTemplateUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftTemplate-SwiftTemplateUITests/Pods-SwiftTemplate-SwiftTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		952C0409C8925E189191FF08 /* Pods-SwiftTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTemplate.debug.xcconfig"; path = "Target Support Files/Pods-SwiftTemplate/Pods-SwiftTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		A6D7A34EAABB23A6E84ACA8C /* Pods-SwiftTemplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTemplateTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftTemplateTests/Pods-SwiftTemplateTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +169,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5D0728D0241254C80032A778 /* Workflow */ = {
+			isa = PBXGroup;
+			children = (
+				5D0728D1241254E40032A778 /* TemplateWorkFlow.swift */,
+			);
+			path = Workflow;
+			sourceTree = "<group>";
+		};
 		5D370B292411F2FA00D953BD = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +202,7 @@
 		5D370B342411F2FA00D953BD /* SwiftTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				5D370BB2241244B500D953BD /* Module */,
 				5D370B9A2411F37300D953BD /* ViewController */,
 				5D370B822411F36A00D953BD /* Template */,
 				5D370B7D2411F36500D953BD /* swift的消息派发 */,
@@ -308,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				5D370B9B2411F37300D953BD /* ViewController.swift */,
+				5D370BBB24124BD600D953BD /* HomeController.swift */,
 				5D370B9C2411F37300D953BD /* TableView */,
 			);
 			path = ViewController;
@@ -336,6 +356,33 @@
 				5D370BAE2411F61C00D953BD /* contacts.json */,
 			);
 			path = MockResource;
+			sourceTree = "<group>";
+		};
+		5D370BB02412448C00D953BD /* OOP */ = {
+			isa = PBXGroup;
+			children = (
+				5D370BB52412450900D953BD /* OOPTemplateController.swift */,
+				5D370BB72412452400D953BD /* OOPDataSourceProtocol.swift */,
+				5D370BB92412453E00D953BD /* OOPTemplateDataSourceProvider.swift */,
+			);
+			path = OOP;
+			sourceTree = "<group>";
+		};
+		5D370BB12412449300D953BD /* Design Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				5D0728D0241254C80032A778 /* Workflow */,
+				5D370BB02412448C00D953BD /* OOP */,
+			);
+			path = "Design Pattern";
+			sourceTree = "<group>";
+		};
+		5D370BB2241244B500D953BD /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5D370BB12412449300D953BD /* Design Pattern */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 		5ED12EE17BD0EB31CCDF02E7 /* Pods */ = {
@@ -595,8 +642,10 @@
 				5D370B902411F36A00D953BD /* TemplateModel.swift in Sources */,
 				5D370BAB2411F46000D953BD /* ProtocolLearning.swift in Sources */,
 				5D370BA92411F45B00D953BD /* PatternMatch.swift in Sources */,
+				5D370BB62412450900D953BD /* OOPTemplateController.swift in Sources */,
 				5D370B362411F2FA00D953BD /* AppDelegate.swift in Sources */,
 				5D370B7A2411F35D00D953BD /* CustomAlertView1.swift in Sources */,
+				5D370BB82412452400D953BD /* OOPDataSourceProtocol.swift in Sources */,
 				5D370B912411F36A00D953BD /* TemplateView.swift in Sources */,
 				5D370B6A2411F34000D953BD /* DataProvider.swift in Sources */,
 				5D370B712411F35100D953BD /* UIView+Extension.swift in Sources */,
@@ -605,6 +654,8 @@
 				5D370BA72411F45100D953BD /* ComplexProtocol.swift in Sources */,
 				5D370B932411F36A00D953BD /* TemplateTableView.swift in Sources */,
 				5D370B812411F36500D953BD /* message.swift in Sources */,
+				5D0728D2241254E40032A778 /* TemplateWorkFlow.swift in Sources */,
+				5D370BBC24124BD600D953BD /* HomeController.swift in Sources */,
 				5D370B7B2411F35D00D953BD /* CustomTransitionAnimated.swift in Sources */,
 				5D370BA32411F38B00D953BD /* Generics.swift in Sources */,
 				5D370BA02411F37300D953BD /* BaseTableViewDataSourceProtocol.swift in Sources */,
@@ -616,6 +667,7 @@
 				5D370B752411F35100D953BD /* UIResponser+Extension.swift in Sources */,
 				5D370B972411F36A00D953BD /* TemplateViewController.swift in Sources */,
 				5D370B982411F36A00D953BD /* TemplateCollectionViewController.swift in Sources */,
+				5D370BBA2412453E00D953BD /* OOPTemplateDataSourceProvider.swift in Sources */,
 				5D370B7C2411F35D00D953BD /* CustomAlertViewController.swift in Sources */,
 				5D370B952411F36A00D953BD /* TemplateCollectionViewCell.swift in Sources */,
 				5D370B742411F35100D953BD /* UIImageExt.swift in Sources */,
