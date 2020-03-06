@@ -10,6 +10,7 @@
 		43660AF7F7F8FE63BE505D53 /* Pods_SwiftTemplate_SwiftTemplateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE35915885CFEB65680DCDD /* Pods_SwiftTemplate_SwiftTemplateUITests.framework */; };
 		569304857566BEB812DE1E75 /* Pods_SwiftTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504B57415BD4AE02ACE16062 /* Pods_SwiftTemplate.framework */; };
 		5D0728D2241254E40032A778 /* TemplateWorkFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0728D1241254E40032A778 /* TemplateWorkFlow.swift */; };
+		5D0728D424127DC00032A778 /* TemplateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0728D324127DC00032A778 /* TemplateService.swift */; };
 		5D370B362411F2FA00D953BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370B352411F2FA00D953BD /* AppDelegate.swift */; };
 		5D370B382411F2FA00D953BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370B372411F2FA00D953BD /* SceneDelegate.swift */; };
 		5D370B3D2411F2FA00D953BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D370B3B2411F2FA00D953BD /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		44F38A8A28120485FDEE196E /* Pods-SwiftTemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTemplateTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftTemplateTests/Pods-SwiftTemplateTests.release.xcconfig"; sourceTree = "<group>"; };
 		504B57415BD4AE02ACE16062 /* Pods_SwiftTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0728D1241254E40032A778 /* TemplateWorkFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateWorkFlow.swift; sourceTree = "<group>"; };
+		5D0728D324127DC00032A778 /* TemplateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateService.swift; sourceTree = "<group>"; };
 		5D370B322411F2FA00D953BD /* SwiftTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D370B352411F2FA00D953BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D370B372411F2FA00D953BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				5D370B692411F33F00D953BD /* DataProvider.swift */,
+				5D0728D324127DC00032A778 /* TemplateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				5D370BA62411F45100D953BD /* CompareProtocol.swift in Sources */,
 				5D370B922411F36A00D953BD /* TemplateTableViewCell.swift in Sources */,
 				5D370B752411F35100D953BD /* UIResponser+Extension.swift in Sources */,
+				5D0728D424127DC00032A778 /* TemplateService.swift in Sources */,
 				5D370B972411F36A00D953BD /* TemplateViewController.swift in Sources */,
 				5D370B982411F36A00D953BD /* TemplateCollectionViewController.swift in Sources */,
 				5D370BBA2412453E00D953BD /* OOPTemplateDataSourceProvider.swift in Sources */,

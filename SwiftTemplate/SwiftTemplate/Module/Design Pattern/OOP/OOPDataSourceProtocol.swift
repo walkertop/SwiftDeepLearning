@@ -16,9 +16,9 @@ struct OOPDataModel: Codable {
 protocol OOPDataSourceProtocol {
     
     var name: String { get }
+    
     func numberOfSection() -> Int
     func numberOfRowInSection(_ section: Int) -> Int
-    
     func requestData(id: String, willGetFromRemoteBlock: () -> Void,
                      remoteFinished block: @escaping (([OOPDataModel]?, Error?) -> Void))
 }
