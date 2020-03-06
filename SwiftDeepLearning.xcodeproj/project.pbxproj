@@ -7,10 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D417D6C2411E0D000AC1727 /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D6B2411E0D000AC1727 /* TemplateViewController.swift */; };
+		5D417D6F2411E0F800AC1727 /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D6E2411E0F800AC1727 /* TemplateTableViewController.swift */; };
+		5D417D712411E10800AC1727 /* TemplateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D702411E10800AC1727 /* TemplateCollectionViewController.swift */; };
+		5D417D732411E12E00AC1727 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D722411E12E00AC1727 /* UIScreen+Extension.swift */; };
+		5D417D752411E18F00AC1727 /* UIResponser+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D742411E18F00AC1727 /* UIResponser+Extension.swift */; };
+		5D417D792411E33D00AC1727 /* TemplateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D782411E33D00AC1727 /* TemplateTableView.swift */; };
+		5D417D7B2411E35A00AC1727 /* TemplateCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D7A2411E35A00AC1727 /* TemplateCollectionView.swift */; };
+		5D417D7D2411E36800AC1727 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D7C2411E36800AC1727 /* TemplateView.swift */; };
+		5D417D7F2411E37E00AC1727 /* TemplateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D7E2411E37E00AC1727 /* TemplateTableViewCell.swift */; };
+		5D417D812411E39600AC1727 /* TemplateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D802411E39600AC1727 /* TemplateCollectionViewCell.swift */; };
+		5D417D842411E3C700AC1727 /* TemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D832411E3C700AC1727 /* TemplateModel.swift */; };
+		5D417D862411E5BA00AC1727 /* TemplateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D417D852411E5BA00AC1727 /* TemplateConstants.swift */; };
 		5D612EA31F31C5AE00FFA558 /* message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D612EA21F31C5AE00FFA558 /* message.swift */; };
+		5D631178212C1377003C7619 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D631177212C1377003C7619 /* UIView+Extension.swift */; };
 		5D75FA031F20DFBB0026AE68 /* ComplexProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75FA021F20DFBB0026AE68 /* ComplexProtocol.swift */; };
 		5D75FA051F2193D20026AE68 /* CompareProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75FA041F2193D20026AE68 /* CompareProtocol.swift */; };
-		5D83B6DA1F29B8ED00AEBDFB /* UIView+Entension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D83B6D91F29B8ED00AEBDFB /* UIView+Entension.swift */; };
+		5DAEE05B2411EC1100A02B37 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DAEE05A2411EC1100A02B37 /* contacts.json */; };
+		5DAEE05F2411EC4E00A02B37 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAEE05E2411EC4E00A02B37 /* DataProvider.swift */; };
 		5DD1D5031F3082F500C64038 /* MethodDispatchClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1D5021F3082F500C64038 /* MethodDispatchClass.swift */; };
 		5DF6229B1F15C2D800D74036 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF6229A1F15C2D800D74036 /* AppDelegate.swift */; };
 		5DF6229D1F15C2D800D74036 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF6229C1F15C2D800D74036 /* ViewController.swift */; };
@@ -43,10 +57,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D417D6B2411E0D000AC1727 /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
+		5D417D6E2411E0F800AC1727 /* TemplateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTableViewController.swift; sourceTree = "<group>"; };
+		5D417D702411E10800AC1727 /* TemplateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewController.swift; sourceTree = "<group>"; };
+		5D417D722411E12E00AC1727 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		5D417D742411E18F00AC1727 /* UIResponser+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponser+Extension.swift"; sourceTree = "<group>"; };
+		5D417D782411E33D00AC1727 /* TemplateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTableView.swift; sourceTree = "<group>"; };
+		5D417D7A2411E35A00AC1727 /* TemplateCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionView.swift; sourceTree = "<group>"; };
+		5D417D7C2411E36800AC1727 /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
+		5D417D7E2411E37E00AC1727 /* TemplateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTableViewCell.swift; sourceTree = "<group>"; };
+		5D417D802411E39600AC1727 /* TemplateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D417D832411E3C700AC1727 /* TemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateModel.swift; sourceTree = "<group>"; };
+		5D417D852411E5BA00AC1727 /* TemplateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateConstants.swift; sourceTree = "<group>"; };
 		5D612EA21F31C5AE00FFA558 /* message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = message.swift; sourceTree = "<group>"; };
+		5D631177212C1377003C7619 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5D75FA021F20DFBB0026AE68 /* ComplexProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexProtocol.swift; sourceTree = "<group>"; };
 		5D75FA041F2193D20026AE68 /* CompareProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompareProtocol.swift; sourceTree = "<group>"; };
-		5D83B6D91F29B8ED00AEBDFB /* UIView+Entension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Entension.swift"; sourceTree = "<group>"; };
+		5DAEE05A2411EC1100A02B37 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
+		5DAEE05E2411EC4E00A02B37 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		5DD1D5021F3082F500C64038 /* MethodDispatchClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodDispatchClass.swift; sourceTree = "<group>"; };
 		5DF622971F15C2D800D74036 /* SwiftDeepLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDeepLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF6229A1F15C2D800D74036 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +120,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D417D6D2411E0DB00AC1727 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				5D417D852411E5BA00AC1727 /* TemplateConstants.swift */,
+				5D417D822411E3B300AC1727 /* Model */,
+				5D417D772411E31900AC1727 /* View */,
+				5D417D762411E30C00AC1727 /* ViewController */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		5D417D762411E30C00AC1727 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5D417D6B2411E0D000AC1727 /* TemplateViewController.swift */,
+				5D417D6E2411E0F800AC1727 /* TemplateTableViewController.swift */,
+				5D417D702411E10800AC1727 /* TemplateCollectionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5D417D772411E31900AC1727 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D417D782411E33D00AC1727 /* TemplateTableView.swift */,
+				5D417D7E2411E37E00AC1727 /* TemplateTableViewCell.swift */,
+				5D417D802411E39600AC1727 /* TemplateCollectionViewCell.swift */,
+				5D417D7A2411E35A00AC1727 /* TemplateCollectionView.swift */,
+				5D417D7C2411E36800AC1727 /* TemplateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D417D822411E3B300AC1727 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D417D832411E3C700AC1727 /* TemplateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5D75FA011F20DF5F0026AE68 /* POP面向协议编程 */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,9 +173,27 @@
 		5D83B6D81F29B8CF00AEBDFB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				5D83B6D91F29B8ED00AEBDFB /* UIView+Entension.swift */,
+				5D631177212C1377003C7619 /* UIView+Extension.swift */,
+				5D417D722411E12E00AC1727 /* UIScreen+Extension.swift */,
+				5D417D742411E18F00AC1727 /* UIResponser+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5DAEE05C2411EC1300A02B37 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				5DAEE05A2411EC1100A02B37 /* contacts.json */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		5DAEE05D2411EC2800A02B37 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5DAEE05E2411EC4E00A02B37 /* DataProvider.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5DD1D5011F3082BF00C64038 /* swift的消息派发 */ = {
@@ -141,6 +228,8 @@
 		5DF622991F15C2D800D74036 /* SwiftDeepLearning */ = {
 			isa = PBXGroup;
 			children = (
+				5DAEE05D2411EC2800A02B37 /* Services */,
+				5D417D6D2411E0DB00AC1727 /* Template */,
 				5D83B6D81F29B8CF00AEBDFB /* Extension */,
 				5DF6229A1F15C2D800D74036 /* AppDelegate.swift */,
 				5DF6229C1F15C2D800D74036 /* ViewController.swift */,
@@ -148,6 +237,7 @@
 				5DF622C81F15C2FB00D74036 /* CustomProtocol.swift */,
 				5DF622CA1F15C35000D74036 /* ProtocolLearning.swift */,
 				5DF691E91F2772EC00487691 /* 泛型（Generics） */,
+				5DAEE05C2411EC1300A02B37 /* Resource */,
 				5D75FA011F20DF5F0026AE68 /* POP面向协议编程 */,
 				5DF622CC1F15C61100D74036 /* PatternMatch.swift */,
 				5DF6229E1F15C2D800D74036 /* Main.storyboard */,
@@ -247,26 +337,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "walker彬";
 				TargetAttributes = {
 					5DF622961F15C2D800D74036 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = A9DWS95K67;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 					5DF622AA1F15C2D900D74036 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = A9DWS95K67;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5DF622961F15C2D800D74036;
 					};
 					5DF622B51F15C2D900D74036 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = A9DWS95K67;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5DF622961F15C2D800D74036;
 					};
@@ -274,7 +364,7 @@
 			};
 			buildConfigurationList = 5DF622921F15C2D800D74036 /* Build configuration list for PBXProject "SwiftDeepLearning" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -297,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DAEE05B2411EC1100A02B37 /* contacts.json in Resources */,
 				5DF622A51F15C2D800D74036 /* LaunchScreen.storyboard in Resources */,
 				5DF622A21F15C2D800D74036 /* Assets.xcassets in Resources */,
 				5DF622A01F15C2D800D74036 /* Main.storyboard in Resources */,
@@ -325,16 +416,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DF6229D1F15C2D800D74036 /* ViewController.swift in Sources */,
+				5D417D862411E5BA00AC1727 /* TemplateConstants.swift in Sources */,
 				5DD1D5031F3082F500C64038 /* MethodDispatchClass.swift in Sources */,
+				5D417D6C2411E0D000AC1727 /* TemplateViewController.swift in Sources */,
 				5DF691EB1F27731200487691 /* Generics.swift in Sources */,
+				5D417D712411E10800AC1727 /* TemplateCollectionViewController.swift in Sources */,
 				5DF622C91F15C2FB00D74036 /* CustomProtocol.swift in Sources */,
+				5D417D7B2411E35A00AC1727 /* TemplateCollectionView.swift in Sources */,
 				5DF622CD1F15C61100D74036 /* PatternMatch.swift in Sources */,
+				5D417D7D2411E36800AC1727 /* TemplateView.swift in Sources */,
 				5D75FA051F2193D20026AE68 /* CompareProtocol.swift in Sources */,
+				5D417D812411E39600AC1727 /* TemplateCollectionViewCell.swift in Sources */,
+				5D631178212C1377003C7619 /* UIView+Extension.swift in Sources */,
 				5DF6229B1F15C2D800D74036 /* AppDelegate.swift in Sources */,
+				5D417D6F2411E0F800AC1727 /* TemplateTableViewController.swift in Sources */,
+				5D417D7F2411E37E00AC1727 /* TemplateTableViewCell.swift in Sources */,
+				5D417D792411E33D00AC1727 /* TemplateTableView.swift in Sources */,
+				5D417D732411E12E00AC1727 /* UIScreen+Extension.swift in Sources */,
+				5DAEE05F2411EC4E00A02B37 /* DataProvider.swift in Sources */,
 				5D75FA031F20DFBB0026AE68 /* ComplexProtocol.swift in Sources */,
+				5D417D752411E18F00AC1727 /* UIResponser+Extension.swift in Sources */,
+				5D417D842411E3C700AC1727 /* TemplateModel.swift in Sources */,
 				5D612EA31F31C5AE00FFA558 /* message.swift in Sources */,
 				5DF622CB1F15C35000D74036 /* ProtocolLearning.swift in Sources */,
-				5D83B6DA1F29B8ED00AEBDFB /* UIView+Entension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +507,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -410,6 +515,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -460,6 +566,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -467,6 +574,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -506,7 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -520,7 +628,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -535,7 +643,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearningTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftDeepLearning.app/SwiftDeepLearning";
 			};
 			name = Debug;
@@ -551,7 +659,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearningTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftDeepLearning.app/SwiftDeepLearning";
 			};
 			name = Release;
@@ -566,7 +674,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearningUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = SwiftDeepLearning;
 			};
 			name = Debug;
@@ -581,7 +689,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sohu-inc.guobin.swift.SwiftDeepLearningUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = SwiftDeepLearning;
 			};
 			name = Release;

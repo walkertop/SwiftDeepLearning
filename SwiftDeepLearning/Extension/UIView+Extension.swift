@@ -30,7 +30,7 @@ extension UIView {
         return self
     }
     
-    func with(contentMode: UIViewContentMode) -> Self {
+    func with(contentMode: UIView.ContentMode) -> Self {
         self.contentMode = contentMode
         return self
     }

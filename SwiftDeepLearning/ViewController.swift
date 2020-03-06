@@ -25,6 +25,7 @@ class ViewController: UIViewController {
 //        }
         testMethodDispatch()
         view.addSubview(configCusomView())
+        testGestureAndTouchEvent()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +34,38 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController {
+    func testGestureAndTouchEvent() {
+        let superButton = UIButton()
+        superButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        superButton.backgroundColor = .yellow
+        view.addSubview(superButton)
+        
+        let subBtn = UIButton()
+        subBtn.addTarget(self, action: #selector(touchBtn), for: .touchUpInside)
+        subBtn.frame = CGRect(x: 10, y: 10, width: 50, height: 50)
+        subBtn.backgroundColor = .green
+        superButton.addSubview(subBtn)
+        
+        let tap = UISwipeGestureRecognizer(target: self, action: #selector(tapEvent))
+        
+        subBtn.addGestureRecognizer(tap)
+    }
+    
+    @objc func touchBtn() {
+        print("----touchBtn")
+        view.backgroundColor = .white
+        let templateViewController = TemplateViewController()
+        navigationController?.pushViewController(templateViewController, animated: true)
+        
+    }
+    
+    @objc func tapEvent() {
+        print("----tapEvent")
+        view.backgroundColor = .white
+    }
+
+}
 
 func configCusomView() -> UIView{
     let customView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 200, height: 200))
@@ -70,4 +103,5 @@ func testMethodDispatch() {
 //    oc.OCFunc()
 //    oc.test()
 }
+
 

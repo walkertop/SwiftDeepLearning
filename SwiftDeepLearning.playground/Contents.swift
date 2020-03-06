@@ -1632,3 +1632,42 @@ dic[1]?.count
 
 
 
+/*
+ 验证swift的派发机制
+ * 不继承自NSObjct的class，内部的方法，使用函数表派发（table dispatch)
+        * 添加了final，会变为直接派发
+ 
+ * extension class的方法，使用静态派发（Direct Dispatch)，而且不支持override重写；
+        * 若使用了@objc，直接派发就变为消息发送（Message Dispatch)，支持重写
+
+ -------
+ * 继承自NSObjct的class的
+ 
+ */
+
+class MyClass {
+    func test() {}
+    final func aFinalMethod() {
+        print("11")
+    }
+}
+extension MyClass {
+     @objc func extensionMethod() {}
+    
+}
+
+class SubClass: MyClass {
+    override func extensionMethod() {}
+    override func test() {
+        print("重写")
+    }
+    
+//    override func aFinalMethod() {
+//        print("22")
+//    }
+}
+
+let testClass = SubClass()
+testClass.test()
+testClass.aFinalMethod()
+
