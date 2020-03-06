@@ -11,7 +11,11 @@ import UIKit
 class HomeController: UIViewController {
     private static var TableViewCellIdentifier = HomeController.identifier + UITableViewCell.identifier
     
-    private var dataSource = [String]()
+    private var dataSource = [String]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -74,7 +78,13 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let OOPViewController = OOPTemplateController()
-        navigationController?.pushViewController(OOPViewController, animated: true)
+        
+        modalTextAlert(title: "title", accept: "ok", cancel: "cancel", placeholder: "placeholder") { [weak self] (content) in
+            guard let self = self, let c = content else { return }
+            self.dataSource.append(c)
+        }
+        
+//        let OOPViewController = OOPTemplateController()
+//        navigationController?.pushViewController(OOPViewController, animated: true)
     }
 }

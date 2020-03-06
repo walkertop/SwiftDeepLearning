@@ -11,6 +11,7 @@
 		569304857566BEB812DE1E75 /* Pods_SwiftTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504B57415BD4AE02ACE16062 /* Pods_SwiftTemplate.framework */; };
 		5D0728D2241254E40032A778 /* TemplateWorkFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0728D1241254E40032A778 /* TemplateWorkFlow.swift */; };
 		5D0728D424127DC00032A778 /* TemplateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0728D324127DC00032A778 /* TemplateService.swift */; };
+		5D0728D62412A21B0032A778 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0728D52412A21B0032A778 /* UIViewController+Extension.swift */; };
 		5D370B362411F2FA00D953BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370B352411F2FA00D953BD /* AppDelegate.swift */; };
 		5D370B382411F2FA00D953BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370B372411F2FA00D953BD /* SceneDelegate.swift */; };
 		5D370B3D2411F2FA00D953BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D370B3B2411F2FA00D953BD /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		504B57415BD4AE02ACE16062 /* Pods_SwiftTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0728D1241254E40032A778 /* TemplateWorkFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateWorkFlow.swift; sourceTree = "<group>"; };
 		5D0728D324127DC00032A778 /* TemplateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateService.swift; sourceTree = "<group>"; };
+		5D0728D52412A21B0032A778 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		5D370B322411F2FA00D953BD /* SwiftTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D370B352411F2FA00D953BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D370B372411F2FA00D953BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				5D370B6E2411F35100D953BD /* UIScreen+Extension.swift */,
 				5D370B6F2411F35100D953BD /* UIImageExt.swift */,
 				5D370B702411F35100D953BD /* UIResponser+Extension.swift */,
+				5D0728D52412A21B0032A778 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				5D370B362411F2FA00D953BD /* AppDelegate.swift in Sources */,
 				5D370B7A2411F35D00D953BD /* CustomAlertView1.swift in Sources */,
 				5D370BB82412452400D953BD /* OOPDataSourceProtocol.swift in Sources */,
+				5D0728D62412A21B0032A778 /* UIViewController+Extension.swift in Sources */,
 				5D370B912411F36A00D953BD /* TemplateView.swift in Sources */,
 				5D370B6A2411F34000D953BD /* DataProvider.swift in Sources */,
 				5D370B712411F35100D953BD /* UIView+Extension.swift in Sources */,
