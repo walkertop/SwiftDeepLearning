@@ -29,12 +29,18 @@ class HomeController: UIViewController {
         setupUI()
         configureTableView()
         fetchData()
+        setupAdaperView()
     }
-    
     
     private func fetchData() {
         dataSource = ["1", "2"]
         tableView.reloadData()
+    }
+    
+    private func setupAdaperView() {
+        ListAdaper(dataSource, in: view) { (item) in
+            print(item)
+        }
     }
     
     private func configureTableView() {
@@ -79,10 +85,10 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        modalTextAlert(title: "title", accept: "ok", cancel: "cancel", placeholder: "placeholder") { [weak self] (content) in
-            guard let self = self, let c = content else { return }
-            self.dataSource.append(c)
-        }
+//        modalTextAlert(title: "title", accept: "ok", cancel: "cancel", placeholder: "placeholder") { [weak self] (content) in
+//            guard let self = self, let c = content else { return }
+//            self.dataSource.append(c)
+//        }
         
 //        let OOPViewController = OOPTemplateController()
 //        navigationController?.pushViewController(OOPViewController, animated: true)
