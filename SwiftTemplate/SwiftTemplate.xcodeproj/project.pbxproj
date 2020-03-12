@@ -55,6 +55,8 @@
 		5D370BBA2412453E00D953BD /* OOPTemplateDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BB92412453E00D953BD /* OOPTemplateDataSourceProvider.swift */; };
 		5D370BBC24124BD600D953BD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BBB24124BD600D953BD /* HomeController.swift */; };
 		5D7446452418B8AD00ED90AF /* UIViewController+RuntimeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7446442418B8AD00ED90AF /* UIViewController+RuntimeExtension.swift */; };
+		5D7446482418D93400ED90AF /* TemplateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7446472418D93400ED90AF /* TemplateRouter.swift */; };
+		5D74464B24191A2B00ED90AF /* LightNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74464A24191A2B00ED90AF /* LightNavigationRouter.swift */; };
 		5D9A31A124168E8000F3CC4E /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9A31A024168E8000F3CC4E /* Notification+Extension.swift */; };
 		751CA523C63357EFCA171DFD /* Pods_SwiftTemplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3D75189EEC9E979723A069 /* Pods_SwiftTemplateTests.framework */; };
 /* End PBXBuildFile section */
@@ -135,6 +137,8 @@
 		5D370BBB24124BD600D953BD /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		5D7446432418B84800ED90AF /* SwiftRuntimeREADME.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SwiftRuntimeREADME.md; sourceTree = "<group>"; };
 		5D7446442418B8AD00ED90AF /* UIViewController+RuntimeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+RuntimeExtension.swift"; sourceTree = "<group>"; };
+		5D7446472418D93400ED90AF /* TemplateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateRouter.swift; sourceTree = "<group>"; };
+		5D74464A24191A2B00ED90AF /* LightNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightNavigationRouter.swift; sourceTree = "<group>"; };
 		5D9A31A024168E8000F3CC4E /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		9391A09101D12630461E1686 /* Pods-SwiftTemplate-SwiftTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTemplate-SwiftTemplateUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftTemplate-SwiftTemplateUITests/Pods-SwiftTemplate-SwiftTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		952C0409C8925E189191FF08 /* Pods-SwiftTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTemplate.debug.xcconfig"; path = "Target Support Files/Pods-SwiftTemplate/Pods-SwiftTemplate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -395,6 +399,7 @@
 		5D370BB2241244B500D953BD /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				5D7446462418D92000ED90AF /* Router */,
 				5D7446422418B7EF00ED90AF /* SwiftRuntime */,
 				5D370BB12412449300D953BD /* Design Pattern */,
 			);
@@ -408,6 +413,23 @@
 				5D7446442418B8AD00ED90AF /* UIViewController+RuntimeExtension.swift */,
 			);
 			path = SwiftRuntime;
+			sourceTree = "<group>";
+		};
+		5D7446462418D92000ED90AF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5D7446472418D93400ED90AF /* TemplateRouter.swift */,
+				5D74464924191A0700ED90AF /* LightRouter */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5D74464924191A0700ED90AF /* LightRouter */ = {
+			isa = PBXGroup;
+			children = (
+				5D74464A24191A2B00ED90AF /* LightNavigationRouter.swift */,
+			);
+			path = LightRouter;
 			sourceTree = "<group>";
 		};
 		5ED12EE17BD0EB31CCDF02E7 /* Pods */ = {
@@ -673,6 +695,7 @@
 				5D370BB82412452400D953BD /* OOPDataSourceProtocol.swift in Sources */,
 				5D0728D62412A21B0032A778 /* UIViewController+Extension.swift in Sources */,
 				5D370B912411F36A00D953BD /* TemplateView.swift in Sources */,
+				5D7446482418D93400ED90AF /* TemplateRouter.swift in Sources */,
 				5D370B6A2411F34000D953BD /* DataProvider.swift in Sources */,
 				5D7446452418B8AD00ED90AF /* UIViewController+RuntimeExtension.swift in Sources */,
 				5D370B712411F35100D953BD /* UIView+Extension.swift in Sources */,
@@ -690,6 +713,7 @@
 				5D370B992411F36A00D953BD /* TemplateTableViewController.swift in Sources */,
 				5D370B942411F36A00D953BD /* TemplateCollectionView.swift in Sources */,
 				5D370BA62411F45100D953BD /* CompareProtocol.swift in Sources */,
+				5D74464B24191A2B00ED90AF /* LightNavigationRouter.swift in Sources */,
 				5D370B922411F36A00D953BD /* TemplateTableViewCell.swift in Sources */,
 				5D370B752411F35100D953BD /* UIResponser+Extension.swift in Sources */,
 				5D0728D424127DC00032A778 /* TemplateService.swift in Sources */,

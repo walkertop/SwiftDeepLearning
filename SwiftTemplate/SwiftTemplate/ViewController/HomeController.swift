@@ -8,7 +8,17 @@
 
 import UIKit
 
+//  tuple, 前面是显示的内容，后面是点击的事件
+typealias ClickEventType = (String, (String) -> Void)
+
 class HomeController: UIViewController {
+    
+    var pushEvent = [ClickEventType]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     private static var TableViewCellIdentifier = HomeController.identifier + UITableViewCell.identifier
     
     private var dataSource = [String]() {
@@ -29,7 +39,18 @@ class HomeController: UIViewController {
         setupUI()
         configureTableView()
         fetchData()
-        setupAdaperView()
+//        setupAdaperView()
+    }
+    
+    private func configure() {
+        let click = { name in
+            print(name)
+        }
+//        let element = ("name", )
+        let a = ("name", ())
+//        pushEvent.append { (name) in
+//            print(name)
+//        }
     }
     
     private func fetchData() {
@@ -89,7 +110,8 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 //            guard let self = self, let c = content else { return }
 //            self.dataSource.append(c)
 //        }
-        
+//
+        LightRouter.default.navigate(MyNavigation.template, from: self)
 //        let OOPViewController = OOPTemplateController()
 //        navigationController?.pushViewController(OOPViewController, animated: true)
     }
