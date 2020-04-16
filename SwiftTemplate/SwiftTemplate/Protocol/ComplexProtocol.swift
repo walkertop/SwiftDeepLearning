@@ -9,21 +9,6 @@
 import Foundation
 import UIKit
 
-//protocol ComplexProtocol {
-//    func a()
-//    func b()
-//    func c()
-//    
-//    func one()
-//    func two()
-//    func three()
-//}
-
-
-
-///
-
-
 /*
  面向协议变成好处之一：
         对于复杂的协议，对于后期协议的拆分和组合，更加的方便
@@ -56,7 +41,7 @@ class SomeObject: ComplexProtocol {
     }
 
     func one() {
-        
+
     }
 
     func c() {
@@ -71,7 +56,6 @@ class SomeObject: ComplexProtocol {
         
     }
     
-//    let a = 
     let acc = Constant.cell.identifier
 }
 
@@ -94,8 +78,6 @@ extension UIColor {
     }
 }
 //为了灵活性，可以扩展静态方法
-
-
 
 
 /// 实现了一个获取UIView类的协议，可以以类名作为identifier

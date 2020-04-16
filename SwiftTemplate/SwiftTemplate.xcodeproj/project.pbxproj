@@ -44,7 +44,6 @@
 		5D370B9F2411F37300D953BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370B9B2411F37300D953BD /* ViewController.swift */; };
 		5D370BA02411F37300D953BD /* BaseTableViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370B9D2411F37300D953BD /* BaseTableViewDataSourceProtocol.swift */; };
 		5D370BA12411F37300D953BD /* BaseTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370B9E2411F37300D953BD /* BaseTableTableViewController.swift */; };
-		5D370BA32411F38B00D953BD /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BA22411F38B00D953BD /* Generics.swift */; };
 		5D370BA62411F45100D953BD /* CompareProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BA42411F45000D953BD /* CompareProtocol.swift */; };
 		5D370BA72411F45100D953BD /* ComplexProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BA52411F45100D953BD /* ComplexProtocol.swift */; };
 		5D370BA92411F45B00D953BD /* PatternMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D370BA82411F45B00D953BD /* PatternMatch.swift */; };
@@ -125,7 +124,6 @@
 		5D370B9B2411F37300D953BD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D370B9D2411F37300D953BD /* BaseTableViewDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewDataSourceProtocol.swift; sourceTree = "<group>"; };
 		5D370B9E2411F37300D953BD /* BaseTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableTableViewController.swift; sourceTree = "<group>"; };
-		5D370BA22411F38B00D953BD /* Generics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
 		5D370BA42411F45000D953BD /* CompareProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompareProtocol.swift; sourceTree = "<group>"; };
 		5D370BA52411F45100D953BD /* ComplexProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexProtocol.swift; sourceTree = "<group>"; };
 		5D370BA82411F45B00D953BD /* PatternMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternMatch.swift; sourceTree = "<group>"; };
@@ -192,6 +190,16 @@
 			path = Workflow;
 			sourceTree = "<group>";
 		};
+		5D2A7F7E2448631800BCA907 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5D370BAA2411F46000D953BD /* ProtocolLearning.swift */,
+				5D370BA42411F45000D953BD /* CompareProtocol.swift */,
+				5D370BA52411F45100D953BD /* ComplexProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		5D370B292411F2FA00D953BD = {
 			isa = PBXGroup;
 			children = (
@@ -224,10 +232,7 @@
 				5D370B762411F35D00D953BD /* 自定义弹窗 */,
 				5D370B6B2411F35100D953BD /* Extension */,
 				5D370B682411F33F00D953BD /* Services */,
-				5D370BA22411F38B00D953BD /* Generics.swift */,
-				5D370BAA2411F46000D953BD /* ProtocolLearning.swift */,
-				5D370BA42411F45000D953BD /* CompareProtocol.swift */,
-				5D370BA52411F45100D953BD /* ComplexProtocol.swift */,
+				5D2A7F7E2448631800BCA907 /* Protocol */,
 				5D370BA82411F45B00D953BD /* PatternMatch.swift */,
 				5D370B352411F2FA00D953BD /* AppDelegate.swift */,
 				5D370B372411F2FA00D953BD /* SceneDelegate.swift */,
@@ -707,7 +712,6 @@
 				5D0728D2241254E40032A778 /* TemplateWorkFlow.swift in Sources */,
 				5D370BBC24124BD600D953BD /* HomeController.swift in Sources */,
 				5D370B7B2411F35D00D953BD /* CustomTransitionAnimated.swift in Sources */,
-				5D370BA32411F38B00D953BD /* Generics.swift in Sources */,
 				5D370BA02411F37300D953BD /* BaseTableViewDataSourceProtocol.swift in Sources */,
 				5D370B962411F36A00D953BD /* TemplateConstants.swift in Sources */,
 				5D370B992411F36A00D953BD /* TemplateTableViewController.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 enum Math {
     static let e  = 2.718281828459045235360287
     static let pi = 3.141592653589793238462643
@@ -37,7 +38,6 @@ func isSuccessLogin(userType: UserType, userName: String, password: String) -> B
 
 let a = isSuccessLogin(userType: .Admin, userName: "dd", password: "错误")
 
-
 // MARK: - 关联类型（泛型协议)
 /// 场景：协议的A函数中，其参数有很多种，方法的最终确定想交给遵守协议的类或者结构体来制定，就可以使用关联类型
 ///方式：
@@ -49,49 +49,15 @@ protocol AssoicateTypeProtocol {
 }
 
 /// -2-: 在某个遵守协议的类或结构体中，用typealias 来指定具体类型
-class associatedClass: AssoicateTypeProtocol {
+class AssociatedClass: AssoicateTypeProtocol {
     typealias customType = Int
     func protocolFunction(type: customType) -> customType {
         return type
     }
 }
 
-class newClass {
-    func custom()  {
-        let a = associatedClass()
-        let c = a.protocolFunction(type: 3)
-        print(c)
-    }
-}
-
-
 // MARK: - Enum的关联值
-
 enum Result<Value> {    //泛型枚举
     case success(Value)
-    case failur(Error)
+    case failure(Error)
 }
-
-class TestEnum {
-    
-    var name: String {
-        let result = Result<Int>.success(1)
-        switch result {
-        case .success(100):
-            print(result)
-            return "1"
-
-        case .failur(let error):
-            print(error)
-            return "2"
-
-        default :
-            print()
-            return "3"
-
-        }
-    }
-}
-
-///事实上，Optional也是枚举的关联类型
-

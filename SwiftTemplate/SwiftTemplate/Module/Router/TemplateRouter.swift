@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 public typealias APPRouterType = ([AnyHashable: Any]?) -> Void
 
 public protocol APPRouterProtocol {

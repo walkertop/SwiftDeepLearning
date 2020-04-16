@@ -11,6 +11,7 @@ import Foundation
 struct Drawable {
     let name: String
     let age: Int
+    
     func test() {
         
     }

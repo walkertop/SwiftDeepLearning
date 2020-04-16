@@ -33,6 +33,15 @@ class ListAdaper<T, U: UITableView, C: UITableViewCell>: NSObject, AdaperListPro
     
     private var tableView = U(frame: UIScreen.main.bounds, style: .plain)
     
+    init(_ dataSource: [T], in target: UIView, cellClickCallback: @escaping (T) -> ()) {
+        super.init()
+        self.cellClick = cellClickCallback
+        self.dataSource = dataSource
+        target.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -43,24 +52,9 @@ class ListAdaper<T, U: UITableView, C: UITableViewCell>: NSObject, AdaperListPro
         return cell
     }
     
-    init(_ dataSource: [T], in target: UIView, cellClickCallback: @escaping (T) -> ()) {
-        super.init()
-        self.cellClick = cellClickCallback
-        self.dataSource = dataSource
-        target.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("开始点击")
         cellClick?(dataSource[indexPath.row])
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("112")
-    }
 }

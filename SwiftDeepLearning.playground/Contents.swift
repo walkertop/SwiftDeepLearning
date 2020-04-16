@@ -1,9 +1,6 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-import Foundation
-var str = "Hello, playground"
-
 
 //// 函数返回值元组，可以返回多个值
 //func calculateResult(firstNum: Int, secondNum: Int)-> (min: Int,max: Int,sum: Int) {
@@ -57,7 +54,7 @@ var str = "Hello, playground"
 ////    return false
 ////}
 //
-//func clousureFuntion(list: [Int], closure: ((Int) -> Bool))-> Bool {
+//func closureFuntion(list: [Int], closure: ((Int) -> Bool))-> Bool {
 //    
 //    print(list.filter(closure))
 //    return true
@@ -66,7 +63,7 @@ var str = "Hello, playground"
 //}
 //
 //
-//clousureFuntion(list: [1,3,5,8,2,6]) { (num) -> Bool in
+//clousreFuntion(list: [1,3,5,8,2,6]) { (num) -> Bool in
 //  return num > 5
 //}
 //
@@ -94,13 +91,7 @@ var str = "Hello, playground"
 ////
 ////let aChild = Child()
 ////aChild.name = "3232"
-////
-//
-//
-//
-//
-//
-//
+
 //// MARK: - 构造函数
 ////class Ball {
 ////    var name: String?
@@ -119,14 +110,8 @@ var str = "Hello, playground"
 ////let aBall = Ball.init()
 ////let ball = Ball(name: "table tennis")
 ////aBall.name = "Basketball"
-//
-//
-//
-//
-//
+
 //// MARK: - 属性
-//
-//
 ///*
 // 存储型属性
 // 计算型属性
@@ -235,37 +220,36 @@ var str = "Hello, playground"
 //
 //
 //
-//// MARK: - 抛出错误
-//enum PrintError: Error {
-//    case HeightError    //: "身高不在测试范围内"
-//    case WeightError    //: "体重不在测试范围内"
-//}
-//
-//
-//func isFat(height: Float, weight: Float)throws ->  Bool {
-//    if height > 250 || height < 50 {
-//        print("输入身高超限制")
-//        throw PrintError.HeightError
-//    }   else if (weight >= 500 || weight < 0) {
-//        print("体重不在测试范围内")
-//        throw PrintError.WeightError
-//    }   else if height - weight > 110 {
-//        print("合格体重")
-//        return true
-//    } else {
-//        print("超重")
-//        return false
-//    }
-//}
-//
-////isFat(height: 178.9, weight: 74)
-////第一种处理方式
-///*
-// * try? 将结果变为可选的，如果有错，结果为nil,无错，是一个包含函数类型的可选值
-// * 注意即使无错误结果也是可选值
-// */
-//let isFatable = try? isFat(height: 178, weight: 74)         //此时isFatable是Bool型的可选值
-//print(isFatable!)
+//// MARK: - 自定义抛出错误
+enum PrintError: Error {
+    case HeightError    //: "身高不在测试范围内"
+    case WeightError    //: "体重不在测试范围内"
+}
+
+
+func isFat(height: Float, weight: Float) throws -> Bool {
+    if height > 250 || height < 50 {
+        print("输入身高超限制")
+        throw PrintError.HeightError
+    }   else if (weight >= 500 || weight < 0) {
+        print("体重不在测试范围内")
+        throw PrintError.WeightError
+    }   else if height - weight > 110 {
+        print("合格体重")
+        return true
+    } else {
+        print("超重")
+        return false
+    }
+}
+
+//第一种处理方式
+/*
+ * try? 将结果变为可选的，如果有错，结果为nil,无错，是一个包含函数类型的可选值
+ * 注意即使无错误结果也是可选值
+ */
+let isFatable = try? isFat(height: 178, weight: 74)         //此时isFatable是Bool型的可选值
+print(isFatable!)
 //// do-catch处理方式
 ///*
 // * 模式很简单，在do中执行代码，没有错误，则直接执行
@@ -273,20 +257,20 @@ var str = "Hello, playground"
 // *       1.若原函数只有一个throw，则catch后自动将结果变为error
 // *       2. 原函数有多个throw的错误类型，可以在多个catch后分别添加不同的error来分情况处理错误
 // */
-//do {
-//    try isFat(height: 888, weight: 74)
-//} catch  {
-//    print(error)
-//}
+do {
+    try isFat(height: 888, weight: 74)
+} catch  {
+    print(error)
+}
 //
-//var isHealthy = true
-//do {
-//    isHealthy = try isFat(height: 375, weight: 500)
-//} catch PrintError.HeightError {
-//    print("身高错误\(PrintError.HeightError)")
-//} catch PrintError.WeightError {
-//    print("体重错误\(PrintError.WeightError)")
-//}
+var isHealthy = true
+do {
+    isHealthy = try isFat(height: 375, weight: 500)
+} catch PrintError.HeightError {
+    print("身高错误\(PrintError.HeightError)")
+} catch PrintError.WeightError {
+    print("体重错误\(PrintError.WeightError)")
+}
 //
 //// MARK: - 泛型
 //func repeatItem<Item>(repeating item: Item, numberOfTimes: Int) -> [Item] {
@@ -1006,11 +990,6 @@ var str = "Hello, playground"
 ////关门
 //openTheDoor()
 
-
-
-
-
-
 //// MARK: - is和as的类型检查
 ////is :  用类型检查操作符（is）来检查一个实例是否属于特定子类型,可以用来检查继承和遵守协议         返回值类型：   正确为true错误为false
 ////用类型转换操作符（as? 或 as!）某类型的一个常量或变量可能在幕后实际上属于一个子类或者遵守协议，    返回值类型：  正确则返回该类型，错误则返回nil
@@ -1614,8 +1593,6 @@ print(aPerson)
 //    return (1)
 //}
 
-
-
 /// 字典赋值
 var dic: [Int : [String]] = [Int : [String]]()
 dic[2] = ["Two","222"]
@@ -1626,12 +1603,7 @@ let a = dic[1]?.count
 dic[1]?.append("一")
 dic[1]?.count
 
-
-
-
-
-
-
+// prama: MARK: - swift中的函数派发
 /*
  验证swift的派发机制
  * 不继承自NSObjct的class，内部的方法，使用函数表派发（table dispatch)
@@ -1645,29 +1617,53 @@ dic[1]?.count
  
  */
 
-class MyClass {
+class MethodDispatchClass {
     func test() {}
     final func aFinalMethod() {
-        print("11")
+        print("---aFinalMethod---")
     }
 }
-extension MyClass {
-     @objc func extensionMethod() {}
-    
+extension MethodDispatchClass {
+     @objc func extensionMethod() {
+        print("---extensionMethod---")
+    }
 }
 
-class SubClass: MyClass {
+class SubMethodDispatchClass: MethodDispatchClass {
     override func extensionMethod() {}
     override func test() {
-        print("重写")
+        print("子类重写父类方法---")
     }
-    
-//    override func aFinalMethod() {
-//        print("22")
-//    }
 }
 
-let testClass = SubClass()
-testClass.test()
-testClass.aFinalMethod()
+let subMethodDispatchClass = SubMethodDispatchClass()
+subMethodDispatchClass.test()
+subMethodDispatchClass.aFinalMethod()
 
+
+//MARK: MethodDispatchClassFromNSObject
+class MethodDispatchClassFromNSObject: NSObject {
+}
+
+
+extension MethodDispatchClassFromNSObject {
+    func message() {}
+    @nonobjc func nonObjc() {}
+    @objc @inline(__always) dynamic func inlineAndDynamic() {}
+    @objc final func finalWithPerformSelectorSupport() {}
+}
+
+//MARK: ClassB
+class SubMethodDispatchClassFromNSObject: MethodDispatchClassFromNSObject {
+    
+}
+
+
+//MARK: 调用
+let subMethodDispatchClassFromNSObject = SubMethodDispatchClassFromNSObject()
+
+subMethodDispatchClassFromNSObject.message()
+subMethodDispatchClassFromNSObject.nonObjc()
+subMethodDispatchClassFromNSObject.inlineAndDynamic()
+subMethodDispatchClassFromNSObject.finalWithPerformSelectorSupport()
+subMethodDispatchClassFromNSObject.perform(#selector(SubMethodDispatchClassFromNSObject.finalWithPerformSelectorSupport))

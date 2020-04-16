@@ -34,12 +34,11 @@ class HomeController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        setupUI()
-        configureTableView()
-        fetchData()
-//        setupAdaperView()
+        
+//        setupUI()
+//        configureTableView()
+//        fetchData()
+        setupAdaperView()
     }
     
     private func configure() {
@@ -59,9 +58,10 @@ class HomeController: UIViewController {
     }
     
     private func setupAdaperView() {
-        ListAdaper(dataSource, in: view) { (item) in
+        let tableViewAdapter = ListAdaper(["1", "2"], in: view) { (item) in
             print(item)
         }
+        tableViewAdapter.dataSource = ["1", "2"]
     }
     
     private func configureTableView() {
@@ -74,20 +74,6 @@ class HomeController: UIViewController {
         tableView.frame = CGRect(x: 0, y: 168, width: UIScreen.width, height: UIScreen.height - 80)
         view.addSubview(tableView)
     }
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
@@ -105,14 +91,13 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        modalTextAlert(title: "title", accept: "ok", cancel: "cancel", placeholder: "placeholder") { [weak self] (content) in
-//            guard let self = self, let c = content else { return }
-//            self.dataSource.append(c)
-//        }
-//
+        //        modalTextAlert(title: "title", accept: "ok", cancel: "cancel", placeholder: "placeholder") { [weak self] (content) in
+        //            guard let self = self, let c = content else { return }
+        //            self.dataSource.append(c)
+        //        }
+        //
         LightRouter.default.navigate(MyNavigation.template, from: self)
-//        let OOPViewController = OOPTemplateController()
-//        navigationController?.pushViewController(OOPViewController, animated: true)
+        //        let OOPViewController = OOPTemplateController()
+        //        navigationController?.pushViewController(OOPViewController, animated: true)
     }
 }
